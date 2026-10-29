@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lavish Review: 3 Prototypes &amp; Scrollytelling Architecture | elukumi.gr</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Cormorant+Garamond:wght@600;700&family=GFS+Didot&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0d0f14;
+      --surface: #151821;
+      --surface-card: #1c202d;
+      --surface-hover: #242938;
+      --border: #283042;
+      --border-accent: rgba(197, 155, 39, 0.4);
+      --text: #f3f5f9;
+      --text-muted: #9ba6bd;
+      --accent: #c59b27;
+      --accent-glow: rgba(197, 155, 39, 0.25);
+      --primary: #9e2a38;
+      --success: #10b981;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-heritage: 'Cormorant Garamond', Georgia, serif;
+      --font-gourmet: 'Playfair Display', Georgia, serif;
+      --font-boutique: 'GFS Didot', serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding-bottom: 5rem;
+    }
+
+    /* TOP STICKY BAR */
+    .lavish-top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(13, 15, 20, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .brand-cluster {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 12px var(--success);
+      animation: pulseGreen 2s infinite;
+    }
+    @keyframes pulseGreen {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    .brand-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+    .brand-subtitle {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .nav-tabs {
+      display: flex;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 4px;
+      gap: 4px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.5rem 1.2rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .tab-btn:hover {
+      color: #ffffff;
+    }
+    .tab-btn.active {
+      background: var(--surface-card);
+      color: #ffffff;
+      border: 1px solid var(--border-accent);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .lavish-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.15rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--accent) 0%, #dfb746 100%);
+      color: #151106;
+      box-shadow: 0 4px 14px rgba(197, 155, 39, 0.3);
+    }
+    .btn-gold:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(197, 155, 39, 0.45);
+    }
+    .btn-outline {
+      background: var(--surface);
+      border-color: var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2.2rem 1.75rem;
+    }
+
+    /* HERO BANNER */
+    .plan-hero {
+      background: linear-gradient(135deg, #171c26 0%, #1c151e 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.8rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+    .plan-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(197, 155, 39, 0.15);
+      border: 1px solid rgba(197, 155, 39, 0.35);
+      color: var(--accent);
+      padding: 0.3rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.2rem;
+    }
+    .plan-title {
+      font-family: var(--font-heritage);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .plan-title span {
+      color: var(--accent);
+      font-style: italic;
+    }
+    .plan-lead {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.75;
+    }
+
+    /* TAB CONTENT WRAPPER */
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 3 DESIGN CARDS GRID (SIDE-BY-SIDE VIEW) */
+    .prototypes-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+    }
+    .three-designs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 1100px) {
+      .three-designs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .design-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+    }
+    .design-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+    }
+    .design-card.active-pick {
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 25px var(--accent-glow);
+    }
+
+    .design-card-preview-head {
+      height: 190px;
+      position: relative;
+      overflow: hidden;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .design-card-preview-head img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.65);
+      transition: transform 0.6s ease;
+      z-index: 1;
+    }
+    .design-card:hover .design-card-preview-head img {
+      transform: scale(1.06);
+    }
+    .design-card-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+    .design-card-head-content {
+      position: relative;
+      z-index: 3;
+    }
+
+    .design-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .design-card-sample-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-top: 1.5rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .palette-strip {
+      display: flex;
+      height: 8px;
+      width: 100%;
+    }
+
+    .design-card-body {
+      padding: 1.6rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .design-name-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .design-tagline {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .spec-badges-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .spec-pill {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .design-card-footer {
+      padding: 1.2rem 1.6rem;
+      background: var(--surface-card);
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    /* INTERACTIVE CANVAS / LIVE PROTOTYPE EMBED */
+    .prototype-canvas-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      margin-bottom: 3rem;
+    }
+    .canvas-toolbar {
+      background: #11141b;
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .canvas-concept-pills {
+      display: inline-flex;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 3px;
+      gap: 3px;
+    }
+    .canvas-pill-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .canvas-pill-btn.active {
+      background: var(--accent);
+      color: #121008;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .viewport-resizers {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .resizer-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .resizer-btn:hover, .resizer-btn.active {
+      background: var(--surface-card);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .frame-container {
+      width: 100%;
+      height: 840px;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    .prototype-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      transition: width 0.3s ease;
+    }
+
+    /* SCROLLYTELLING SANDBOX & SIMULATOR */
+    .sandbox-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .sandbox-controls-row {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 2.5rem;
+      align-items: center;
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      margin-bottom: 2.2rem;
+    }
+    .scrub-slider-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .scrub-slider {
+      width: 100%;
+      -webkit-appearance: none;
+      height: 8px;
+      border-radius: 9999px;
+      background: var(--border);
+      outline: none;
+      cursor: pointer;
+    }
+    .scrub-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--accent);
+      border: 2px solid #ffffff;
+    }
+
+    .sim-stages-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+    @media (max-width: 900px) {
+      .sim-stages-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .sim-stage-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      padding: 1.2rem;
+      transition: all 0.3s ease;
+      opacity: 0.6;
+      transform: scale(0.97);
+    }
+    .sim-stage-card.sim-active {
+      opacity: 1;
+      transform: scale(1);
+      border-color: var(--accent);
+      box-shadow: 0 8px 24px rgba(197, 155, 39, 0.25);
+    }
+    .sim-img-wrap {
+      width: 100%;
+      height: 120px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 0.85rem;
+    }
+    .sim-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .sim-stage-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .sim-stage-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.35rem;
+    }
+    .sim-stage-detail {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* DECISION & FEEDBACK ACTION BANNER */
+    .decision-banner {
+      background: linear-gradient(135deg, #1c2331 0%, #171a22 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .icon {
+      width: 1.1rem;
+      height: 1.1rem;
+      stroke-width: 2;
+      stroke: currentColor;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP STICKY BAR -->
+  <header class="lavish-top-bar">
+    <div class="brand-cluster">
+      <div class="status-dot"></div>
+      <div>
+        <div class="brand-title">elukumi.gr | 3 Switchable Prototypes &amp; Scrollytelling</div>
+        <div class="brand-subtitle">Ευανθία Γκέτσιου • 5ο χλμ. Λάρισας - Φαλάνης</div>
+      </div>
+    </div>
+
+    <!-- MAIN NAV TABS -->
+    <nav class="nav-tabs" role="tablist">
+      <button class="tab-btn active" onclick="switchMainTab('prototypes', this)">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>3 Design Prototypes</span>
+      </button>
+      <button class="tab-btn" onclick="switchMainTab('canvas', this)">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <span>Full Interactive Canvas</span>
+      </button>
+      <button class="tab-btn" onclick="switchMainTab('scrolly', this)">
+        <svg class="icon" viewBox="0 0 24 24"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>
+        <span>Scrollytelling Simulator</span>
+      </button>
+    </nav>
+
+    <!-- QUICK ACTIONS -->
+    <div class="top-actions">
+      <a href="index.html" target="_blank" class="lavish-btn btn-outline">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        <span>Open Standalone</span>
+      </a>
+      <button class="lavish-btn btn-gold" data-hermes-send="Εγκρίνω το Concept 1 (Παραδοσιακό Αρχοντικό) για το elukumi.gr! Προχωρήστε στην τελική έκδοση." onclick="notifyAgent('Concept 1 Approved')">
+        <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Approve Concept 1</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO INTRO -->
+    <div class="plan-hero">
+      <div class="plan-badge">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>Official Design Review Prototype</span>
+      </div>
+      <h1 class="plan-title">
+        3 Σχεδιαστικά Πρωτότυπα για το <span>elukumi.gr</span>
+      </h1>
+      <p class="plan-lead">
+        Σύμφωνα με τις προδιαγραφές σας, δημιουργήσαμε <strong>3 πλήρως ανεπτυγμένα και λειτουργικά σχεδιαστικά πρωτότυπα</strong> για το παραδοσιακό εργαστήριο της <strong>Ευανθίας Γκέτσιου</strong> στη Λάρισα (5ο χλμ. Λάρισας - Φαλάνης). Κάθε πρωτότυπο περιλαμβάνει πλήρη δομή, αυθεντική ελληνική κειμενογραφία, φόρμα ενδιαφέροντος και τον καινοτόμο μηχανισμό <strong>Scrollytelling με κίνηση στενά συγχρονισμένη στην κύλιση (movement tight to scrolling)</strong>.
+      </p>
+    </div>
+
+    <!-- ==========================================================================
+         TAB 1: 3 DESIGN PROTOTYPES (SIDE-BY-SIDE COMPARISON)
+         ========================================================================== -->
+    <div id="tab-prototypes" class="tab-content active">
+
+      <div class="prototypes-header-bar">
+        <div>
+          <h2 style="font-size: 1.5rem; font-weight: 700; color: #ffffff; margin-bottom: 0.3rem;">
+            Σύγκριση 3 Σχεδιαστικών Επιλογών
+          </h2>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Κάντε κλικ στο «Δοκιμή στο Canvas» για άμεση πλήρη διάδραση ή στο «Επιλογή Concept» για αποστολή έγκρισης.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 CARDS GRID -->
+      <div class="three-designs-grid">
+
+        <!-- DESIGN 1: TRADITIONAL HERITAGE -->
+        <div class="design-card active-pick" id="card-heritage">
+          <div class="design-card-preview-head" style="background: #1e1214;">
+            <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=700&q=80" alt="Παραδοσιακό Αρχοντικό">
+            <div class="design-card-overlay" style="background: linear-gradient(135deg, rgba(43,31,29,0.85) 0%, rgba(123,29,40,0.75) 100%);"></div>
+            <div class="design-card-head-content">
+              <span class="design-badge-top" style="color: #ffd875;">
+                ★ Προτεινομενο • Concept 1
+              </span>
+              <div class="design-card-sample-title" style="font-family: var(--font-heritage);">
+                Παραδοσιακό Αρχοντικό
+              </div>
+            </div>
+          </div>
+          <div class="palette-strip">
+            <div style="flex: 2; background: #7b1d28;" title="#7b1d28 Carmine Rosewood"></div>
+            <div style="flex: 1.5; background: #c59b27;" title="#c59b27 Royal Gold"></div>
+            <div style="flex: 1; background: #faf7f2;" title="#faf7f2 Ivory"></div>
+            <div style="flex: 1; background: #2b1f1d;" title="#2b1f1d Cocoa Dark"></div>
+          </div>
+          <div class="design-card-body">
+            <div class="design-name-title">Traditional Heritage</div>
+            <p class="design-tagline">
+              Αυθεντική αίσθηση θεσσαλικού αρχοντικού. Ζεστό ροδόξυλο, βασιλικό μελί χρυσό και παραδοσιακή γραμματοσειρά Cormorant Garamond.
+            </p>
+            <div class="spec-badges-wrap">
+              <span class="spec-pill">🏛️ Cormorant &amp; Cinzel</span>
+              <span class="spec-pill">🍯 Royal Honey Gold</span>
+              <span class="spec-pill">🔥 Χάλκινο Καζάνι 114.5°C</span>
+            </div>
+          </div>
+          <div class="design-card-footer">
+            <button class="lavish-btn btn-gold" style="flex: 1;" onclick="loadConceptInCanvas('heritage')">
+              Δοκιμή στο Canvas
+            </button>
+            <button class="lavish-btn btn-outline" data-hermes-send="Εγκρίνω το Concept 1 (Παραδοσιακό Αρχοντικό)!" onclick="notifyAgent('Concept 1 Chosen')">
+              Επιλογή
+            </button>
+          </div>
+        </div>
+
+        <!-- DESIGN 2: GOURMET DELICATESSEN -->
+        <div class="design-card" id="card-gourmet">
+          <div class="design-card-preview-head" style="background: #0f1f18;">
+            <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=700&q=80" alt="Gourmet Delicatessen">
+            <div class="design-card-overlay" style="background: linear-gradient(135deg, rgba(19,34,27,0.88) 0%, rgba(21,59,46,0.8) 100%);"></div>
+            <div class="design-card-head-content">
+              <span class="design-badge-top" style="color: #6ee7b7;">
+                Concept 2 • Gourmet
+              </span>
+              <div class="design-card-sample-title" style="font-family: var(--font-gourmet);">
+                Gourmet Delicatessen
+              </div>
+            </div>
+          </div>
+          <div class="palette-strip">
+            <div style="flex: 2; background: #153b2e;" title="#153b2e Pistachio Deep"></div>
+            <div style="flex: 1.5; background: #d4a34b;" title="#d4a34b Polished Amber"></div>
+            <div style="flex: 1; background: #f6f9f7;" title="#f6f9f7 Mint Off-white"></div>
+            <div style="flex: 1; background: #13221b;" title="#13221b Forest Black"></div>
+          </div>
+          <div class="design-card-body">
+            <div class="design-name-title">Modern Epicurean</div>
+            <p class="design-tagline">
+              Υψηλή ζαχαροπλαστική και εκλεκτό delicatessen. Βαθύ πράσινο του φιστικιού Αιγίνης, στιλβωμένος ορείχαλκος και Playfair Display.
+            </p>
+            <div class="spec-badges-wrap">
+              <span class="spec-pill">✨ Playfair Display</span>
+              <span class="spec-pill">🌿 Pistachio Emerald</span>
+              <span class="spec-pill">🏨 Delicatessen &amp; HORECA</span>
+            </div>
+          </div>
+          <div class="design-card-footer">
+            <button class="lavish-btn btn-gold" style="flex: 1;" onclick="loadConceptInCanvas('gourmet')">
+              Δοκιμή στο Canvas
+            </button>
+            <button class="lavish-btn btn-outline" data-hermes-send="Εγκρίνω το Concept 2 (Gourmet Delicatessen)!" onclick="notifyAgent('Concept 2 Chosen')">
+              Επιλογή
+            </button>
+          </div>
+        </div>
+
+        <!-- DESIGN 3: PASTEL BOUTIQUE -->
+        <div class="design-card" id="card-boutique">
+          <div class="design-card-preview-head" style="background: #221217;">
+            <img src="https://images.unsplash.com/photo-1508737666275-520e73680962?auto=format&fit=crop&w=700&q=80" alt="Pastel Boutique">
+            <div class="design-card-overlay" style="background: linear-gradient(135deg, rgba(52,30,36,0.85) 0%, rgba(148,64,83,0.76) 100%);"></div>
+            <div class="design-card-head-content">
+              <span class="design-badge-top" style="color: #f472b6;">
+                Concept 3 • Sweet Gifting
+              </span>
+              <div class="design-card-sample-title" style="font-family: var(--font-boutique);">
+                Pastel Boutique
+              </div>
+            </div>
+          </div>
+          <div class="palette-strip">
+            <div style="flex: 2; background: #944053;" title="#944053 Dusty Rose"></div>
+            <div style="flex: 1.5; background: #c28b57;" title="#c28b57 Almond Bronze"></div>
+            <div style="flex: 1; background: #fefafb;" title="#fefafb Powder Sugar"></div>
+            <div style="flex: 1; background: #341e24;" title="#341e24 Velvet Plum"></div>
+          </div>
+          <div class="design-card-body">
+            <div class="design-name-title">Sweet Gifting &amp; Favor</div>
+            <p class="design-tagline">
+              Αέρινη πουδρένια αισθητική για συσκευασίες δώρου, γάμους και βαπτίσεις. Απαλό τριανταφυλλί, ζεστό αμυγδαλί και Didot τυπογραφία.
+            </p>
+            <div class="spec-badges-wrap">
+              <span class="spec-pill">🌸 GFS Didot Serif</span>
+              <span class="spec-pill">🎀 Dusty Rose Sugar</span>
+              <span class="spec-pill">💍 Γάμος &amp; Βάπτιση</span>
+            </div>
+          </div>
+          <div class="design-card-footer">
+            <button class="lavish-btn btn-gold" style="flex: 1;" onclick="loadConceptInCanvas('boutique')">
+              Δοκιμή στο Canvas
+            </button>
+            <button class="lavish-btn btn-outline" data-hermes-send="Εγκρίνω το Concept 3 (Pastel Boutique)!" onclick="notifyAgent('Concept 3 Chosen')">
+              Επιλογή
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ==========================================================================
+         TAB 2: FULL INTERACTIVE CANVAS (WITH CONCEPT SWITCHER & DEVICE RESIZER)
+         ========================================================================== -->
+    <div id="tab-canvas" class="tab-content">
+      <div class="prototype-canvas-wrap">
+        <div class="canvas-toolbar">
+          <!-- CONCEPT SWITCHER PILLS -->
+          <div class="canvas-concept-pills">
+            <button class="canvas-pill-btn active" id="pill-heritage" onclick="switchFrameConcept('heritage')">
+              Option 1: Αρχοντικό
+            </button>
+            <button class="canvas-pill-btn" id="pill-gourmet" onclick="switchFrameConcept('gourmet')">
+              Option 2: Gourmet Delicatessen
+            </button>
+            <button class="canvas-pill-btn" id="pill-boutique" onclick="switchFrameConcept('boutique')">
+              Option 3: Pastel Boutique
+            </button>
+          </div>
+
+          <!-- DEVICE RESIZERS -->
+          <div class="viewport-resizers">
+            <button class="resizer-btn active" onclick="setFrameWidth('100%', this)">
+              🖥️ Desktop (100%)
+            </button>
+            <button class="resizer-btn" onclick="setFrameWidth('820px', this)">
+              📱 Tablet (820px)
+            </button>
+            <button class="resizer-btn" onclick="setFrameWidth('420px', this)">
+              📱 Mobile (420px)
+            </button>
+            <button class="resizer-btn" onclick="reloadPrototypeFrame()">
+              🔄 Reload
+            </button>
+          </div>
+        </div>
+
+        <div class="frame-container" id="frameBox">
+          <iframe id="mainCanvasFrame" class="prototype-frame" src="index.html"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         TAB 3: SCROLLYTELLING SANDBOX & SIMULATOR
+         ========================================================================== -->
+    <div id="tab-scrolly" class="tab-content">
+      <div class="sandbox-card">
+        <h2 style="font-size: 1.6rem; font-weight: 700; color: #ffffff; margin-bottom: 0.5rem;">
+          Διαδραστικός Προσομοιωτής Scrollytelling
+        </h2>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 2rem;">
+          Δοκιμάστε τη στενή σύνδεση της κίνησης με το scroll (movement tight to scrolling). Σύρετε το ρυθμιστικό κύλισης ή πατήστε στα στάδια για να δείτε την άμεση εναλλαγή των δεδομένων παραγωγής:
+        </p>
+
+        <!-- SLIDER CONTROLS ROW -->
+        <div class="sandbox-controls-row">
+          <div>
+            <div style="font-size: 0.76rem; text-transform: uppercase; color: var(--accent); font-weight: 700; letter-spacing: 0.1em; margin-bottom: 0.3rem;">
+              Εικονικο Scroll Offset (420vh Track)
+            </div>
+            <div style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-mono); color: #ffffff;" id="simPercentDisplay">
+              0%
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-muted);" id="simStageLabel">
+              Στάδιο 01: Επιλογή Αγνών Υλικών
+            </div>
+          </div>
+
+          <div class="scrub-slider-box">
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">
+              <span>0% (Αρχή Track)</span>
+              <span>25%</span>
+              <span>50%</span>
+              <span>75%</span>
+              <span>100% (Ολοκλήρωση)</span>
+            </div>
+            <input type="range" min="0" max="100" value="0" class="scrub-slider" id="simSlider" oninput="handleSimScrub(this.value)">
+            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+              <button class="resizer-btn" onclick="jumpSimTo(0)">01. Υλικά</button>
+              <button class="resizer-btn" onclick="jumpSimTo(30)">02. Καζάνι</button>
+              <button class="resizer-btn" onclick="jumpSimTo(60)">03. Αρώματα</button>
+              <button class="resizer-btn" onclick="jumpSimTo(90)">04. Κοπή &amp; Άχνη</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 SIMULATED STAGES CARDS -->
+        <div class="sim-stages-row">
+
+          <div class="sim-stage-card sim-active" id="simCard0">
+            <div class="sim-img-wrap">
+              <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&w=600&q=80" alt="Υλικά">
+            </div>
+            <div class="sim-stage-tag">ΣΤΑΔΙΟ 01 (0% - 25%)</div>
+            <h4 class="sim-stage-title">Επιλογή Υλικών</h4>
+            <p class="sim-stage-detail">Καθαρό νερό, κρυσταλλική ζάχαρη, αγνό άμυλο. Μηδενικά χημικά πηκτικά.</p>
+          </div>
+
+          <div class="sim-stage-card" id="simCard1">
+            <div class="sim-img-wrap">
+              <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80" alt="Καζάνι">
+            </div>
+            <div class="sim-stage-tag">ΣΤΑΔΙΟ 02 (25% - 50%)</div>
+            <h4 class="sim-stage-title">Βράσιμο στο Καζάνι</h4>
+            <p class="sim-stage-detail" id="simCauldronDetail">114.5 °C • Χάλκινα καζάνια με επίμονη χειρωνακτική ανάδευση.</p>
+          </div>
+
+          <div class="sim-stage-card" id="simCard2">
+            <div class="sim-img-wrap">
+              <img src="https://images.unsplash.com/photo-1508737666275-520e73680962?auto=format&fit=crop&w=600&q=80" alt="Αρώματα">
+            </div>
+            <div class="sim-stage-tag">ΣΤΑΔΙΟ 03 (50% - 75%)</div>
+            <h4 class="sim-stage-title">Άρωμα &amp; Υφή</h4>
+            <p class="sim-stage-detail">Έγχυση ροδόνερου, φυσικής μαστίχας Χίου, περγαμόντου και καρπών.</p>
+          </div>
+
+          <div class="sim-stage-card" id="simCard3">
+            <div class="sim-img-wrap">
+              <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=600&q=80" alt="Κοπή & Άχνη">
+            </div>
+            <div class="sim-stage-tag">ΣΤΑΔΙΟ 04 (75% - 100%)</div>
+            <h4 class="sim-stage-title">Κοπή &amp; Άχνη</h4>
+            <p class="sim-stage-detail">Φυσικό κρύωμα, κόψιμο σε κύβους και πλουσιοπάροχη άχνη ζάχαρη.</p>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+          <button class="lavish-btn btn-gold" onclick="switchMainTab('canvas', document.querySelectorAll('.tab-btn')[1]); focusFrameScrolly();">
+            Δείτε το στο Ζωντανό Prototype &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DECISION / APPROVAL BANNER -->
+    <div class="decision-banner">
+      <div>
+        <h3 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-bottom: 0.35rem;">
+          Ποιο Concept ταιριάζει περισσότερο στην κυρία Ευανθία;
+        </h3>
+        <p style="font-size: 0.92rem; color: var(--text-muted); max-width: 620px;">
+          Πατήστε ένα από τα κουμπιά για να καταχωρήσετε άμεσα την απόφασή σας ή να ζητήσετε πρόσθετες λεπτομέρειες:
+        </p>
+      </div>
+      <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+        <button class="lavish-btn btn-gold" data-hermes-send="Εγκρίνω το Concept 1 (Παραδοσιακό Αρχοντικό)!" onclick="notifyAgent('Concept 1 Approved')">
+          <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Έγκριση Concept 1 (Αρχοντικό)</span>
+        </button>
+        <button class="lavish-btn btn-outline" data-hermes-send="Εγκρίνω το Concept 2 (Gourmet Delicatessen)!" onclick="notifyAgent('Concept 2 Approved')">
+          <span>Έγκριση Concept 2 (Gourmet)</span>
+        </button>
+        <button class="lavish-btn btn-outline" data-hermes-send="Εγκρίνω το Concept 3 (Pastel Boutique)!" onclick="notifyAgent('Concept 3 Approved')">
+          <span>Έγκριση Concept 3 (Boutique)</span>
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Tab Switching
+    function switchMainTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      const activeEl = document.getElementById('tab-' + tabId);
+      if (activeEl) activeEl.classList.add('active');
+
+      if (btn) {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+    }
+
+    // Concept Switcher for Canvas Frame
+    function switchFrameConcept(concept) {
+      const frame = document.getElementById('mainCanvasFrame');
+      if (frame && frame.contentWindow && frame.contentWindow.switchConcept) {
+        frame.contentWindow.switchConcept(concept);
+      }
+      document.querySelectorAll('.canvas-pill-btn').forEach(b => b.classList.remove('active'));
+      const activePill = document.getElementById('pill-' + concept);
+      if (activePill) activePill.classList.add('active');
+
+      // Highlight active design card
+      document.querySelectorAll('.design-card').forEach(c => c.classList.remove('active-pick'));
+      const activeCard = document.getElementById('card-' + concept);
+      if (activeCard) activeCard.classList.add('active-pick');
+    }
+
+    function loadConceptInCanvas(concept) {
+      switchMainTab('canvas', document.querySelectorAll('.tab-btn')[1]);
+      switchFrameConcept(concept);
+    }
+
+    function setFrameWidth(w, btn) {
+      const frame = document.getElementById('mainCanvasFrame');
+      if (frame) frame.style.width = w;
+      document.querySelectorAll('.resizer-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    function reloadPrototypeFrame() {
+      const frame = document.getElementById('mainCanvasFrame');
+      if (frame) frame.src = frame.src;
+    }
+
+    function focusFrameScrolly() {
+      const frame = document.getElementById('mainCanvasFrame');
+      if (frame && frame.contentWindow) {
+        const scrollyEl = frame.contentDocument.getElementById('scrolly-journey');
+        if (scrollyEl) scrollyEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Simulator Scrubbing
+    function handleSimScrub(val) {
+      const p = parseInt(val, 10);
+      document.getElementById('simPercentDisplay').innerText = p + '%';
+
+      let stageIdx = 0;
+      let stageName = 'Στάδιο 01: Επιλογή Αγνών Υλικών';
+
+      if (p >= 75) {
+        stageIdx = 3;
+        stageName = 'Στάδιο 04: Κοπή σε Κύβους & Άχνη Ζάχαρη';
+      } else if (p >= 50) {
+        stageIdx = 2;
+        stageName = 'Στάδιο 03: Έγχυση Ροδόνερου & Μαστίχας';
+      } else if (p >= 25) {
+        stageIdx = 1;
+        const temp = (108 + (p - 25) / 25 * 12).toFixed(1);
+        stageName = `Στάδιο 02: Βράσιμο στο Καζάνι (${temp} °C)`;
+        document.getElementById('simCauldronDetail').innerText = `${temp} °C • Σταθερή αργή ανάδευση σε ανοιχτό καζάνι.`;
+      }
+
+      document.getElementById('simStageLabel').innerText = stageName;
+
+      for (let i = 0; i < 4; i++) {
+        const card = document.getElementById('simCard' + i);
+        if (i === stageIdx) {
+          card.classList.add('sim-active');
+        } else {
+          card.classList.remove('sim-active');
+        }
+      }
+    }
+
+    function jumpSimTo(val) {
+      const slider = document.getElementById('simSlider');
+      slider.value = val;
+      handleSimScrub(val);
+    }
+
+    function notifyAgent(msg) {
+      alert('Ευχαριστούμε! Η επιλογή καταχωρήθηκε: ' + msg);
+    }
+  </script>
+</body>
+</html>

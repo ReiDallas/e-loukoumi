@@ -1,0 +1,2866 @@
+<!DOCTYPE html>
+<html lang="el" data-concept="gourmet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>elukumi.gr | Ευανθία Γκέτσιου — Παραδοσιακό Εργαστήριο Λουκουμιών Λάρισας</title>
+  <meta name="description" content="Παραδοσιακή χειροποίητη παραγωγή ελληνικών λουκουμιών από την Ευανθία Γκέτσιου. 5ο χλμ. Λάρισας - Φαλάνης. Αυθεντικές συνταγές, αγνά υλικά, διαδραστική περιήγηση παραγωγής.">
+
+  <!-- Google Fonts: Cormorant Garamond, Cinzel, Playfair Display, GFS Didot, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=GFS+Didot&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS RESET & DESIGN SYSTEM TOKENS
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--body-font);
+      line-height: 1.6;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+    }
+
+    /* --------------------------------------------------------------------------
+       CONCEPT 1: Παραδοσιακό Αρχοντικό (Traditional Heritage)
+       Warm carmine rosewood, royal honey gold, warm parchment ivory, Cormorant & Cinzel
+       -------------------------------------------------------------------------- */
+    html[data-concept="gourmet"] {
+      --primary: #7b1d28;          /* deep carmine / loukoumi rosewood */
+      --primary-hover: #5d141d;
+      --primary-light: #9e2a38;
+      --primary-tint: #fbebed;
+      --secondary: #c59b27;        /* royal honey gold */
+      --secondary-light: #dfb746;
+      --secondary-subtle: #fcf8ee;
+      --accent: #d97706;
+      --bg: #faf7f2;               /* warm ivory parchment */
+      --bg-alt: #f3ece1;
+      --surface: #ffffff;
+      --surface-glass: rgba(255, 255, 255, 0.95);
+      --border: #e8ded1;
+      --border-accent: rgba(197, 155, 39, 0.35);
+      --text-main: #2b1f1d;        /* roasted cocoa dark */
+      --text-muted: #6e5e5b;
+      --text-light: #9f8e8b;
+      --heading-font: 'Cormorant Garamond', Georgia, serif;
+      --sub-font: 'Cinzel', serif;
+      --body-font: 'Plus Jakarta Sans', sans-serif;
+      --hero-overlay: linear-gradient(135deg, rgba(43, 31, 29, 0.88) 0%, rgba(123, 29, 40, 0.78) 100%);
+      --card-shadow: 0 12px 36px rgba(123, 29, 40, 0.08);
+      --card-shadow-hover: 0 20px 48px rgba(123, 29, 40, 0.16);
+      --scrolly-bg: #1e1214;
+      --scrolly-text: #f7f0eb;
+      --badge-bg: #f9e9ec;
+      --badge-text: #7b1d28;
+      --concept-tag: "Concept 1: Traditional Heritage";
+    }
+
+    /* --------------------------------------------------------------------------
+       CONCEPT 2: Gourmet Delicatessen (Σύγχρονο Εργαστήριο & Delicatessen)
+       Forest pistachio emerald, polished amber brass, crisp eucalyptus tint, Playfair
+       -------------------------------------------------------------------------- */
+    html[data-concept="gourmet"] {
+      --primary: #153b2e;          /* pistachio / deep forest emerald */
+      --primary-hover: #0c251c;
+      --primary-light: #235946;
+      --primary-tint: #eaf3ee;
+      --secondary: #d4a34b;        /* polished amber brass */
+      --secondary-light: #e5b967;
+      --secondary-subtle: #f4f8f5;
+      --accent: #2e7d32;
+      --bg: #f6f9f7;               /* crisp eucalyptus tint */
+      --bg-alt: #e9f0ec;
+      --surface: #ffffff;
+      --surface-glass: rgba(255, 255, 255, 0.95);
+      --border: #d7e4dd;
+      --border-accent: rgba(212, 163, 75, 0.35);
+      --text-main: #13221b;        /* deep forest black */
+      --text-muted: #51695e;
+      --text-light: #7e968b;
+      --heading-font: 'Playfair Display', Georgia, serif;
+      --sub-font: 'Plus Jakarta Sans', sans-serif;
+      --body-font: 'Plus Jakarta Sans', sans-serif;
+      --hero-overlay: linear-gradient(135deg, rgba(19, 34, 27, 0.90) 0%, rgba(21, 59, 46, 0.82) 100%);
+      --card-shadow: 0 12px 36px rgba(21, 59, 46, 0.09);
+      --card-shadow-hover: 0 20px 48px rgba(21, 59, 46, 0.17);
+      --scrolly-bg: #0f1f18;
+      --scrolly-text: #eaf3ee;
+      --badge-bg: #e2ede7;
+      --badge-text: #153b2e;
+      --concept-tag: "Concept 2: Gourmet Delicatessen";
+    }
+
+    /* --------------------------------------------------------------------------
+       CONCEPT 3: Pastel Boutique & Sweet Gifting (Pastel Boutique & Ελληνικό Κέρασμα)
+       Dusty rose delight, warm almond bronze, powdered sugar soft pink, GFS Didot
+       -------------------------------------------------------------------------- */
+    html[data-concept="boutique"] {
+      --primary: #944053;          /* dusty rose delight */
+      --primary-hover: #732a3a;
+      --primary-light: #b85b71;
+      --primary-tint: #fcedf1;
+      --secondary: #c28b57;        /* warm almond bronze */
+      --secondary-light: #d6a473;
+      --secondary-subtle: #fdf6f7;
+      --accent: #e07a8b;
+      --bg: #fefafb;               /* powdered sugar blush off-white */
+      --bg-alt: #f7ebef;
+      --surface: #ffffff;
+      --surface-glass: rgba(255, 255, 255, 0.95);
+      --border: #eedee4;
+      --border-accent: rgba(194, 139, 87, 0.35);
+      --text-main: #341e24;        /* deep velvet plum */
+      --text-muted: #795d66;
+      --text-light: #a38790;
+      --heading-font: 'GFS Didot', serif;
+      --sub-font: 'Cinzel', serif;
+      --body-font: 'Plus Jakarta Sans', sans-serif;
+      --hero-overlay: linear-gradient(135deg, rgba(52, 30, 36, 0.88) 0%, rgba(148, 64, 83, 0.78) 100%);
+      --card-shadow: 0 12px 36px rgba(148, 64, 83, 0.09);
+      --card-shadow-hover: 0 20px 48px rgba(148, 64, 83, 0.17);
+      --scrolly-bg: #221217;
+      --scrolly-text: #faedf1;
+      --badge-bg: #fae4ea;
+      --badge-text: #944053;
+      --concept-tag: "Concept 3: Pastel Boutique";
+    }
+
+    /* ==========================================================================
+       GLOBAL LAYOUT & UTILITIES
+       ========================================================================== */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-spacing {
+      padding: 6.5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--sub-font);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--secondary);
+      margin-bottom: 0.85rem;
+    }
+
+    .section-title {
+      font-family: var(--heading-font);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* SVG Icon Helpers */
+    .icon {
+      display: inline-block;
+      width: 1.25rem;
+      height: 1.25rem;
+      stroke-width: 2;
+      stroke: currentColor;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .icon-sm { width: 1rem; height: 1rem; }
+    .icon-lg { width: 1.75rem; height: 1.75rem; }
+    .icon-xl { width: 2.25rem; height: 2.25rem; }
+
+    /* Button System */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.85rem;
+      font-family: var(--sub-font);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: 9999px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+      border: 1px solid transparent;
+      outline: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    }
+    .btn-secondary {
+      background: var(--secondary);
+      color: #ffffff;
+    }
+    .btn-secondary:hover {
+      background: var(--secondary-light);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text-main);
+    }
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-tint);
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+      color: #2b1f1d;
+      font-weight: 800;
+      box-shadow: 0 6px 18px rgba(197, 155, 39, 0.28);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px rgba(197, 155, 39, 0.4);
+    }
+
+    /* ==========================================================================
+       STICKY PRESENTER BAR (3 SWITCHABLE CONCEPTS & LAVISH CONTROLS)
+       ========================================================================== */
+    .presenter-bar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2000;
+      background: rgba(18, 14, 15, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      padding: 0.55rem 1rem;
+      font-size: 0.82rem;
+    }
+
+    .presenter-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .presenter-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .presenter-live-indicator {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+      animation: pulseGreen 2s infinite;
+    }
+    @keyframes pulseGreen {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .presenter-title {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .concept-switchers {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 3px;
+      border-radius: 9999px;
+      gap: 4px;
+    }
+
+    .concept-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.4rem 0.95rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .concept-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .concept-btn.active {
+      background: #ffffff;
+      color: #1a1516;
+      font-weight: 800;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .presenter-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .p-action-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.74rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background 0.2s;
+    }
+    .p-action-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .p-action-btn.btn-approve {
+      background: #10b981;
+      border-color: #059669;
+      color: #ffffff;
+      font-weight: 700;
+    }
+    .p-action-btn.btn-approve:hover {
+      background: #059669;
+    }
+
+    /* Plan & Specs Drawer / Modal */
+    .plan-drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 2500;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .plan-drawer.active {
+      display: flex;
+    }
+    .plan-box {
+      background: var(--surface);
+      color: var(--text-main);
+      max-width: 860px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      border-radius: 16px;
+      padding: 2.2rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      position: relative;
+    }
+    .plan-close-btn {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: var(--bg-alt);
+      border: none;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================== */
+    .top-bar {
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      padding: 0.55rem 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: background 0.3s ease;
+    }
+    .top-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .top-info-group {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .top-info-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .top-info-item a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .top-info-item a:hover {
+      color: var(--primary);
+    }
+    .top-badge-wholesale {
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-family: var(--sub-font);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.65rem;
+      border-radius: 9999px;
+      letter-spacing: 0.08em;
+    }
+
+    /* ==========================================================================
+       MAIN NAVIGATION HEADER
+       ========================================================================== */
+    .main-header {
+      position: sticky;
+      top: 45px; /* below presenter bar */
+      background: var(--surface-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+    .brand-emblem {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      transition: background 0.3s ease;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title {
+      font-family: var(--heading-font);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      transition: color 0.3s ease;
+    }
+    .brand-subtitle {
+      font-family: var(--sub-font);
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--secondary);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: 1.75rem;
+    }
+    .nav-link {
+      font-family: var(--sub-font);
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-main);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      position: relative;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: var(--primary);
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: width 0.25s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.4rem;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background-color: #1a1214;
+      color: #ffffff;
+      overflow: hidden;
+      padding: 5rem 0;
+    }
+    .hero-media-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.42;
+      filter: saturate(1.1) brightness(0.9);
+      transform: scale(1.02);
+      transition: transform 12s ease-out;
+    }
+    .hero-section:hover .hero-media-bg {
+      transform: scale(1.06);
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: var(--hero-overlay);
+      mix-blend-mode: multiply;
+      transition: background 0.4s ease;
+    }
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+      background-size: 24px 24px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 0.35rem 0.95rem;
+      border-radius: 9999px;
+      font-family: var(--sub-font);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #ffd875;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-family: var(--heading-font);
+      font-size: clamp(2.6rem, 5.2vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.12;
+      margin-bottom: 1.4rem;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+    }
+    .hero-title span {
+      color: #ffd875;
+      font-style: italic;
+    }
+    .hero-desc {
+      font-size: 1.12rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 580px;
+      margin-bottom: 2.2rem;
+    }
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-card-preview {
+      position: relative;
+      border-radius: 20px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+    }
+    .hero-card-img-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3.4;
+      position: relative;
+    }
+    .hero-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .hero-card-preview:hover img {
+      transform: scale(1.04);
+    }
+    .hero-card-badge {
+      position: absolute;
+      bottom: -15px;
+      left: 20px;
+      background: var(--surface);
+      color: var(--text-main);
+      padding: 0.9rem 1.4rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      border-left: 4px solid var(--secondary);
+    }
+    .hero-card-badge strong {
+      display: block;
+      font-size: 0.98rem;
+      color: var(--primary);
+    }
+    .hero-card-badge span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       ABOUT & HERITAGE SECTION
+       ========================================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+    .about-visual-stack {
+      position: relative;
+    }
+    .about-img-main {
+      width: 100%;
+      border-radius: 20px;
+      aspect-ratio: 4 / 4.6;
+      object-fit: cover;
+      box-shadow: var(--card-shadow);
+      border: 6px solid var(--surface);
+    }
+    .about-floating-card {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.4rem;
+      border-radius: 16px;
+      box-shadow: var(--card-shadow);
+      max-width: 250px;
+    }
+    .about-floating-card .stat-num {
+      font-family: var(--heading-font);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .about-floating-card .stat-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    .about-lead {
+      font-size: 1.22rem;
+      font-weight: 600;
+      color: var(--primary);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .about-body-text {
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .pillar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.4rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .pillar-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-accent);
+    }
+    .pillar-icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--primary-tint);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.85rem;
+    }
+    .pillar-card h4 {
+      font-family: var(--sub-font);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+    .pillar-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       CORE FEATURE: SCROLLYTELLING PRODUCTION PROCESS (TIGHT TO SCROLL)
+       ========================================================================== */
+    .scrolly-container {
+      position: relative;
+      /* 4 stages = 400vh scroll track so each stage stays tightly bound to scroll */
+      height: 420vh;
+      background-color: var(--scrolly-bg);
+      color: var(--scrolly-text);
+      transition: background-color 0.4s ease;
+    }
+
+    /* Sticky viewport container pins during the entire 420vh scroll track */
+    .scrolly-viewport {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 4.5rem 2rem 2.5rem 2rem;
+    }
+
+    /* Top Scrolly Header & Progress Track */
+    .scrolly-top-bar {
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .scrolly-header-left {
+      display: flex;
+      flex-direction: column;
+    }
+    .scrolly-eyebrow {
+      font-family: var(--sub-font);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--secondary);
+    }
+    .scrolly-header-title {
+      font-family: var(--heading-font);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    /* Scrolly Progress & Step Quick-Jumpers */
+    .scrolly-nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .scrolly-step-tabs {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .scrolly-step-tab {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: rgba(255, 255, 255, 0.65);
+      font-family: var(--sub-font);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.4rem 0.85rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .scrolly-step-tab:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.14);
+    }
+    .scrolly-step-tab.active {
+      background: var(--secondary);
+      color: #201416;
+      border-color: var(--secondary);
+      box-shadow: 0 0 16px rgba(197, 155, 39, 0.5);
+    }
+
+    .scrolly-scrubber-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .scrolly-scrub-bar-bg {
+      width: 130px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 9999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .scrolly-scrub-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--secondary) 0%, #ffd875 100%);
+      transition: width 0.08s linear;
+    }
+    .scrolly-percent-label {
+      font-family: monospace;
+      font-size: 0.76rem;
+      color: var(--secondary);
+      min-width: 38px;
+    }
+
+    /* Scrolly Interactive Stage Stagecraft (Center Stage) */
+    .scrolly-stage-canvas {
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* Individual stage card container */
+    .scrolly-stage {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(30px) scale(0.98);
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .scrolly-stage.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Visual Media Frame inside Stage */
+    .scrolly-visual-box {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3.2;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: #000000;
+    }
+    .scrolly-visual-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.04);
+      transition: transform 0.6s ease;
+    }
+    .scrolly-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+    }
+
+    /* Interactive Live Gauge / Micro-Widget inside each stage */
+    .stage-interactive-widget {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      background: rgba(22, 16, 18, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      padding: 0.85rem 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .widget-stat-title {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .widget-stat-value {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffd875;
+      font-family: monospace;
+    }
+    .widget-pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f59e0b;
+      box-shadow: 0 0 10px #f59e0b;
+    }
+
+    /* Stage Text & Details */
+    .scrolly-text-box {
+      display: flex;
+      flex-direction: column;
+    }
+    .stage-step-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--secondary);
+      color: var(--secondary);
+      padding: 0.3rem 0.85rem;
+      border-radius: 9999px;
+      font-family: var(--sub-font);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      width: fit-content;
+      margin-bottom: 1rem;
+    }
+    .stage-title {
+      font-family: var(--heading-font);
+      font-size: clamp(2rem, 3.4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 1.1rem;
+    }
+    .stage-description {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 1.6rem;
+    }
+    .stage-spec-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.8rem;
+    }
+    .stage-spec-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .stage-spec-item .icon {
+      color: var(--secondary);
+      margin-top: 0.2rem;
+    }
+
+    /* Bottom Scrolly Milestone Bar */
+    .scrolly-bottom-bar {
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .scrolly-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      animation: floatMouse 2s infinite ease-in-out;
+    }
+    @keyframes floatMouse {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    /* ==========================================================================
+       SIGNATURE PRODUCTS SHOWCASE (ΤΑ ΠΡΟΪΟΝΤΑ ΜΑΣ)
+       ========================================================================== */
+    .products-filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .p-filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: var(--sub-font);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.55rem 1.25rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .p-filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .p-filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.2rem;
+    }
+    .product-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--border-accent);
+    }
+    .product-card-img-wrap {
+      position: relative;
+      aspect-ratio: 4 / 3.2;
+      overflow: hidden;
+      background: var(--bg-alt);
+    }
+    .product-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover .product-card-img-wrap img {
+      transform: scale(1.06);
+    }
+    .product-badge-flavor {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--surface-glass);
+      backdrop-filter: blur(8px);
+      color: var(--primary);
+      font-family: var(--sub-font);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.28rem 0.75rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+      letter-spacing: 0.06em;
+    }
+    .product-body {
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .product-title {
+      font-family: var(--heading-font);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+      line-height: 1.25;
+    }
+    .product-taste-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .product-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.4rem;
+      flex: 1;
+    }
+    .product-packaging-info {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .product-card-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    /* Product Detail Modal */
+    .product-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 3000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .product-modal.active {
+      display: flex;
+    }
+    .product-modal-card {
+      background: var(--surface);
+      border-radius: 20px;
+      max-width: 680px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      animation: modalZoomIn 0.3s ease-out;
+    }
+    @keyframes modalZoomIn {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .product-modal-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+    .product-modal-content {
+      padding: 2rem;
+    }
+
+    /* ==========================================================================
+       B2B & WHOLESALE (ΧΟΝΔΡΙΚΗ & ΕΚΔΗΛΩΣΕΙΣ)
+       ========================================================================== */
+    .b2b-banner {
+      background: linear-gradient(135deg, var(--bg-alt) 0%, var(--surface) 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 3.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .b2b-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .b2b-title {
+      font-family: var(--heading-font);
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .b2b-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 1.6rem;
+    }
+    .b2b-perks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .b2b-perk-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .b2b-perk-item .icon {
+      color: var(--secondary);
+    }
+
+    .b2b-action-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2.2rem;
+      box-shadow: var(--card-shadow);
+      text-align: center;
+    }
+    .b2b-action-title {
+      font-family: var(--heading-font);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.6rem;
+    }
+    .b2b-action-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ==========================================================================
+       LOCATION & INQUIRY FORM SECTION (ΕΠΙΚΟΙΝΩΝΙΑ & ΕΡΓΑΣΤΗΡΙΟ)
+       ========================================================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .contact-info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--card-shadow);
+    }
+    .contact-info-title {
+      font-family: var(--heading-font);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+    .contact-info-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .contact-details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      margin-bottom: 2.5rem;
+    }
+    .contact-detail-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .contact-icon-bubble {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--primary-tint);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-row-title {
+      font-family: var(--sub-font);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+      margin-bottom: 0.2rem;
+    }
+    .contact-row-value {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .contact-row-value a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-row-value a:hover {
+      color: var(--primary);
+    }
+
+    /* Embedded Map Card */
+    .map-preview-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: var(--bg-alt);
+    }
+    .map-preview-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Form Card */
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--card-shadow);
+    }
+    .form-header {
+      margin-bottom: 1.8rem;
+    }
+    .form-header h3 {
+      font-family: var(--heading-font);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+    .form-header p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1.2rem;
+    }
+    .form-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-main);
+      font-family: var(--sub-font);
+      letter-spacing: 0.04em;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-family: var(--body-font);
+      font-size: 0.92rem;
+      color: var(--text-main);
+      background: var(--bg);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-tint);
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    /* Toast Notification */
+    .toast-box {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #181314;
+      color: #ffffff;
+      padding: 1.1rem 1.6rem;
+      border-radius: 14px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+      border-left: 5px solid var(--secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      z-index: 4000;
+      transform: translateY(140%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .toast-box.show {
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: #150e10;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 5rem 0 2rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr 0.9fr 1.1fr;
+      gap: 3.5rem;
+      margin-bottom: 4rem;
+    }
+    .footer-brand-title {
+      font-family: var(--heading-font);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    .footer-brand-desc {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 1.5rem;
+      max-width: 320px;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .footer-social-link {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .footer-social-link:hover {
+      background: var(--secondary);
+      color: #1a1214;
+      transform: translateY(-2px);
+    }
+
+    .footer-col-title {
+      font-family: var(--sub-font);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #ffffff;
+      margin-bottom: 1.4rem;
+    }
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .footer-link-item a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-link-item a:hover {
+      color: var(--secondary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-desc {
+        margin: 0 auto 2.2rem auto;
+      }
+      .hero-cta-group {
+        justify-content: center;
+      }
+      .hero-card-preview {
+        max-width: 540px;
+        margin: 0 auto;
+      }
+      .about-grid, .b2b-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .scrolly-stage {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        overflow-y: auto;
+      }
+      .scrolly-visual-box {
+        aspect-ratio: 16 / 9;
+        max-height: 260px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .scrolly-top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+      .scrolly-nav-controls {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .scrolly-step-tabs {
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       STICKY PRESENTER BAR (3 SWITCHABLE DESIGN OPTIONS & REVIEW PLAN CONTROLS)
+       ========================================================================== -->
+  <aside class="presenter-bar" aria-label="Client Presenter Bar">
+    <div class="presenter-inner">
+      <div class="presenter-brand-group">
+        <span class="presenter-live-indicator"></span>
+        <span class="presenter-title">elukumi.gr | <strong>Ευανθία Γκέτσιου</strong></span>
+      </div>
+
+      <!-- 3 SWITCHABLE OPTIONS -->
+      <div class="concept-switchers" role="group" aria-label="Επιλογή Σχεδιαστικού Ύφους">
+        <button class="concept-btn active" data-concept="gourmet" onclick="switchConcept('heritage')">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>Option 1: Αρχοντικό</span>
+        </button>
+        <button class="concept-btn" data-concept="gourmet" onclick="switchConcept('gourmet')">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span>Option 2: Gourmet Delicatessen</span>
+        </button>
+        <button class="concept-btn" data-concept="boutique" onclick="switchConcept('boutique')">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>Option 3: Pastel Boutique</span>
+        </button>
+      </div>
+
+      <!-- PRESENTER ACTIONS & PLAN TOGGLE -->
+      <div class="presenter-actions">
+        <button class="p-action-btn" onclick="togglePlanDrawer()">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Προδιαγραφές &amp; Plan</span>
+        </button>
+        <a href="#scrolly-journey" class="p-action-btn">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>
+          <span>Scrollytelling Engine</span>
+        </a>
+        <button class="p-action-btn btn-approve" data-hermes-send="Εγκρίνω το Concept 1 (Παραδοσιακό Αρχοντικό) για το elukumi.gr! Προχωρήστε στην τελική έκδοση." onclick="notifyApproval()">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Έγκριση Concept</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       PLAN & ARCHITECTURE SPECIFICATIONS DRAWER (LAVISH REVIEW)
+       ========================================================================== -->
+  <div id="planDrawer" class="plan-drawer" onclick="togglePlanDrawer(event)">
+    <div class="plan-box" onclick="event.stopPropagation()">
+      <button class="plan-close-btn" onclick="togglePlanDrawer()" aria-label="Κλείσιμο παραθύρου">
+        <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <span class="section-eyebrow">
+        <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        Αρχιτεκτονικός Σχεδιασμός &amp; Τεκμηρίωση
+      </span>
+      <h2 style="font-family: var(--heading-font); font-size: 2rem; color: var(--primary); margin-bottom: 0.6rem;">
+        elukumi.gr — Πρωτότυπο Παρουσίασης &amp; 3 Σχεδιαστικές Επιλογές
+      </h2>
+      <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.8rem;">
+        Σχεδιασμένο για την <strong>Ευανθία Γκέτσιου</strong> (Εργαστήριο Παραδοσιακών Λουκουμιών, 5ο χλμ. Λάρισας - Φαλάνης). Πλήρης δομή informational brochure, μηδενικό checkout/e-shop, με έμφαση στο διαδραστικό Scrollytelling παραγωγής.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 2rem;">
+        <div style="background: var(--bg-alt); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border);">
+          <strong style="display: block; font-size: 0.88rem; color: var(--primary); margin-bottom: 0.3rem;">Concept 1: Traditional Heritage</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">Χρώματα βαθύ ροδόξυλου (#7b1d28) &amp; μελί χρυσού. Γραμματοσειρές Cormorant Garamond &amp; Cinzel. Αυθεντική θεσσαλική παράδοση.</p>
+          <button style="margin-top: 0.7rem;" class="btn btn-outline" onclick="switchConcept('heritage'); togglePlanDrawer();">Εφαρμογή</button>
+        </div>
+        <div style="background: var(--bg-alt); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border);">
+          <strong style="display: block; font-size: 0.88rem; color: var(--primary); margin-bottom: 0.3rem;">Concept 2: Gourmet Delicatessen</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">Βαθύ πράσινο φιστικιού (#153b2e) &amp; στιλβωμένος ορείχαλκος. Γραμματοσειρά Playfair Display. Υψηλή γαστρονομία &amp; εκλεκτά κεράσματα.</p>
+          <button style="margin-top: 0.7rem;" class="btn btn-outline" onclick="switchConcept('gourmet'); togglePlanDrawer();">Εφαρμογή</button>
+        </div>
+        <div style="background: var(--bg-alt); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border);">
+          <strong style="display: block; font-size: 0.88rem; color: var(--primary); margin-bottom: 0.3rem;">Concept 3: Pastel Boutique</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">Πουδρένιο τριανταφυλλί (#944053) &amp; ζεστό αμυγδαλί. Γραμματοσειρά GFS Didot. Ιδανικό για συσκευασίες δώρου, γάμους &amp; βαπτίσεις.</p>
+          <button style="margin-top: 0.7rem;" class="btn btn-outline" onclick="switchConcept('boutique'); togglePlanDrawer();">Εφαρμογή</button>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--border); padding-top: 1.5rem;">
+        <h4 style="font-family: var(--sub-font); font-size: 0.88rem; text-transform: uppercase; color: var(--text-main); margin-bottom: 0.6rem;">Μηχανισμός Scroll-Bound Scrollytelling</h4>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
+          Το section παραγωγής χρησιμοποιεί CSS Sticky viewport (100vh) εντός διαδρομής 420vh. Καθώς ο επισκέπτης κυλά τη σελίδα (scroll), το JavaScript διαβάζει το scroll offset και υπολογίζει ακριβείς τιμές μετάβασης (0% έως 100%), ενεργοποιώντας τα 4 στάδια παραγωγής, τις ενδείξεις θερμοκρασίας και τις κινούμενες στρώσεις χωρίς απότομα άλματα.
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 0.8rem; justify-content: flex-end; margin-top: 1rem;">
+        <button class="btn btn-primary" onclick="togglePlanDrawer()">Επιστροφή στο Πρωτότυπο</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       TOP ANNOUNCEMENT & CONTACT BAR (CLEAN SVG ICONS ONLY - NO EMOJIS)
+       ========================================================================== -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-info-group">
+        <div class="top-info-item">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>5ο χλμ. Λάρισας - Φαλάνης, Λάρισα</span>
+        </div>
+        <div class="top-info-item">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Δευτέρα - Σάββατο: 08:00 - 20:00</span>
+        </div>
+      </div>
+      <div class="top-info-group">
+        <div class="top-info-item">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:6984350985"><strong>6984 350985</strong></a>
+        </div>
+        <div class="top-info-item">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:euanthiagetsiou2000@gmail.com">euanthiagetsiou2000@gmail.com</a>
+        </div>
+        <span class="top-badge-wholesale">ΧΟΝΔΡΙΚΗ &amp; ΛΙΑΝΙΚΗ</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN NAVIGATION & HEADER
+       ========================================================================== -->
+  <header class="main-header">
+    <div class="container nav-inner">
+      <a href="#home" class="brand-logo" aria-label="elukumi.gr - Αρχική">
+        <div class="brand-emblem">
+          <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">elukumi.gr</span>
+          <span class="brand-subtitle">Ευανθια Γκετσιου • Παραδοση</span>
+        </div>
+      </a>
+
+      <!-- NAVIGATION LINKS -->
+      <nav aria-label="Κύριο Μενού">
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Αρχική</a></li>
+          <li><a href="#about" class="nav-link">Η Ιστορία μας</a></li>
+          <li><a href="#scrolly-journey" class="nav-link">Τέχνη Παραγωγής</a></li>
+          <li><a href="#products" class="nav-link">Τα Προϊόντα</a></li>
+          <li><a href="#wholesale" class="nav-link">Χονδρική</a></li>
+          <li><a href="#contact" class="nav-link">Επικοινωνία</a></li>
+        </ul>
+      </nav>
+
+      <!-- HEADER ACTIONS -->
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary" style="padding: 0.65rem 1.4rem; font-size: 0.78rem;">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Ζητήστε Δείγματα</span>
+        </a>
+        <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Μενού">
+          <svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section id="home" class="hero-section">
+    <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=1800&q=80" alt="Παραδοσιακά λουκούμια πασπαλισμένα με άχνη ζάχαρη" class="hero-media-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-particles"></div>
+
+    <div class="container hero-content">
+      <div>
+        <div class="hero-tag">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>100% Χειροποίητη Παραγωγή • Εργαστήριο Λάρισας</span>
+        </div>
+
+        <h1 class="hero-title">
+          Η Αυθεντική Τέχνη του <span>Παραδοσιακού Λουκουμιού</span>
+        </h1>
+
+        <p class="hero-desc">
+          Στο <strong>5ο χλμ. Λάρισας - Φαλάνης</strong>, η <strong>Ευανθία Γκέτσιου</strong> δημιουργεί με πατροπαράδοτες συνταγές, αγνό ροδόνερο, φυσική μαστίχα Χίου και αργό σιγοβράσιμο σε χάλκινα καζάνια, λουκούμια απαράμιλλης ποιότητας και βελούδινης υφής.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#scrolly-journey" class="btn btn-gold">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 16 16 12 12 8"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            <span>Ανακαλύψτε την Τέχνη μας</span>
+          </a>
+          <a href="#products" class="btn btn-outline" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Συλλογή Γεύσεων</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- HERO VISUAL PREVIEW CARD -->
+      <div class="hero-card-preview">
+        <div class="hero-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=900&q=80" alt="Φρέσκα λουκούμια κομμένα σε κύβους">
+        </div>
+        <div class="hero-card-badge">
+          <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--primary-tint); color: var(--primary); display: flex; align-items: center; justify-content: center;">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <strong>Αγνά Ελληνικά Υλικά</strong>
+            <span>Χωρίς χημικά συντηρητικά • Φυσικά αρώματα</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT & PHILOSOPHY SECTION
+       ========================================================================== -->
+  <section id="about" class="section-spacing">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual-stack">
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80" alt="Εργαστήριο παραδοσιακής ζαχαροπλαστικής" class="about-img-main">
+          <div class="about-floating-card">
+            <span class="stat-num">5ο χλμ.</span>
+            <div class="stat-desc">
+              <strong>Λάρισας - Φαλάνης</strong>
+              <div>Επισκέψιμο εργαστήριο παραγωγής &amp; διάθεσης</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <span class="section-eyebrow">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Η Ιστορία &amp; Η Φιλοσοφία Μας
+          </span>
+          <h2 class="section-title">Η Ευανθία Γκέτσιου &amp; το Εργαστήριο της Λάρισας</h2>
+          <p class="about-lead">
+            «Το καλό λουκούμι δεν βιάζεται. Θέλει υπομονή, σωστή φωτιά και αγάπη για την αυθεντική γεύση.»
+          </p>
+          <p class="about-body-text">
+            Στην είσοδο του θεσσαλικού κάμπου, στο <strong>5ο χλμ. Λάρισας - Φαλάνης</strong>, το εργαστήριο της <strong>Ευανθίας Γκέτσιου</strong> διατηρεί ζωντανή την παράδοση της χειροποίητης λουκουμοποιίας. Κάθε παρτίδα ξεκινά από το μηδέν με προσεκτικά διαλεγμένη ζάχαρη, εξαιρετικής καθαρότητας νερό και τα πιο εκλεκτά φυσικά αιθέρια έλαια.
+          </p>
+          <p class="about-body-text">
+            Αρνούμαστε τους βιομηχανικούς αυτοματισμούς που αλλοιώνουν την υφή. Επιμένουμε στην παραδοσιακή ανάδευση, στο άπλωμα σε ξύλινα πλατώ και στο κόψιμο στο χέρι, προσφέροντας ένα ελληνικό κέρασμα που ξυπνά μνήμες αρχοντιάς και ζεστασιάς.
+          </p>
+
+          <div class="pillars-grid">
+            <div class="pillar-card">
+              <div class="pillar-icon-box">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <h4>Αργό Σιγοβράσιμο</h4>
+              <p>Χάλκινα καζάνια με συνεχή παρακολούθηση θερμοκρασίας για βελούδινο σώμα που λιώνει αρμονικά.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon-box">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h4>Αγνά Ελληνικά Υλικά</h4>
+              <p>Φυσικό ροδόνερο, αυθεντικά δάκρυα μαστίχας Χίου και φρεσκοκαβουρδισμένα αμύγδαλα.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CORE FEATURE: SCROLLYTELLING PRODUCTION PROCESS (TIGHT TO SCROLL)
+       ========================================================================== -->
+  <section id="scrolly-journey" class="scrolly-container">
+    <div class="scrolly-viewport" id="scrollyViewport">
+
+      <!-- SCROLLY TOP BAR & SCRUBBER -->
+      <div class="scrolly-top-bar">
+        <div class="scrolly-header-left">
+          <span class="scrolly-eyebrow">Διαδραστικη Περιηγηση Παραγωγης</span>
+          <h3 class="scrolly-header-title">Η Τέχνη του Λουκουμιού σε 4 Στάδια</h3>
+        </div>
+
+        <div class="scrolly-nav-controls">
+          <div class="scrolly-step-tabs" role="tablist" aria-label="Στάδια Παραγωγής">
+            <button class="scrolly-step-tab active" data-step="0" onclick="jumpToStep(0)">01. Επιλογή Υλικών</button>
+            <button class="scrolly-step-tab" data-step="1" onclick="jumpToStep(1)">02. Βράσιμο στο Καζάνι</button>
+            <button class="scrolly-step-tab" data-step="2" onclick="jumpToStep(2)">03. Άρωμα &amp; Υφή</button>
+            <button class="scrolly-step-tab" data-step="3" onclick="jumpToStep(3)">04. Κοπή &amp; Άχνη</button>
+          </div>
+
+          <div class="scrolly-scrubber-wrap">
+            <div class="scrolly-scrub-bar-bg">
+              <div class="scrolly-scrub-bar-fill" id="scrollyFill"></div>
+            </div>
+            <span class="scrolly-percent-label" id="scrollyPercent">0%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CENTER STAGE (4 INTERACTIVE PANELS TIGHT TO SCROLL) -->
+      <div class="scrolly-stage-canvas">
+
+        <!-- STAGE 1: Η Επιλογή των Υλικών -->
+        <article class="scrolly-stage active" id="stage0">
+          <div class="scrolly-visual-box">
+            <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&w=1200&q=80" alt="Αγνά υλικά λουκουμιού" class="scrolly-visual-img" id="stageImg0">
+            <div class="scrolly-visual-overlay"></div>
+            <div class="stage-interactive-widget">
+              <div>
+                <div class="widget-stat-title">Προέλευση Υλικών</div>
+                <div class="widget-stat-value">100% Ελληνικά &amp; Πιστοποιημένα</div>
+              </div>
+              <div class="widget-pulse-dot"></div>
+            </div>
+          </div>
+
+          <div class="scrolly-text-box">
+            <div class="stage-step-tag">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+              <span>ΣΤΑΔΙΟ 01 / 04</span>
+            </div>
+            <h3 class="stage-title">Η Επιλογή των Αγνών Υλικών</h3>
+            <p class="stage-description">
+              Η αυθεντική γεύση ξεκινά από τη διαλογή: καθαρό φιλτραρισμένο νερό, εκλεκτή κρυσταλλική ζάχαρη και αγνό άμυλο καλαμποκιού υψηλής ποιότητας. Χωρίς κανένα χημικό υποκατάστατο ή τεχνητά πηκτικά.
+            </p>
+            <ul class="stage-spec-list">
+              <li class="stage-spec-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Μηδενικά βιομηχανικά ζελατινούχα πρόσθετα.</span>
+              </li>
+              <li class="stage-spec-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Φυσικά αρώματα από πιστοποιημένους Έλληνες παραγωγούς.</span>
+              </li>
+              <li class="stage-spec-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Αυστηρή μέτρηση πυκνότητας σιροπιού πριν το καζάνι.</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- STAGE 2: Το Βράσιμο στο Καζάνι -->
+        <article class="scrolly-stage" id="stage1">
+          <div class="scrolly-visual-box">
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=80" alt="Παραδοσιακό καζάνι λουκουμιού" class="scrolly-visual-img" id="stageImg1">
+            <div class="scrolly-visual-overlay"></div>
+            <div class="stage-interactive-widget">
+              <div>
+                <div class="widget-stat-title">Θερμοκρασία Σιγοβρασμού</div>
+                <div class="widget-stat-value" id="cauldronTemp">114.5 °C • Αργή Ανάδευση</div>
+              </div>
+              <div class="widget-pulse-dot" style="background: #ef4444; box-shadow: 0 0 10px #ef4444;"></div>
+            </div>
+          </div>
+
+          <div class="scrolly-text-box">
+            <div class="stage-step-tag">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span>ΣΤΑΔΙΟ 02 / 04</span>
+            </div>
+            <h3 class="stage-title">Το Βράσιμο στο Χάλκινο Καζάνι</h3>
+            <p class="stage-description">
+              Η καρδιά της τέχνης: το μείγμα σιγοβράζει με τις ώρες σε παραδοσιακά χάλκινα ανοιχτά καζάνια. Η συνεχής, ρυθμική ανάδευση αποτρέπει την καύση και επιτρέπει στο άμυλο να δεθεί σε μια διάφανη, βελούδινη μάζα.
+            </p>
+            <ul class="stage-spec-list">
+              <li class="stage-spec-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Σταθερή χαμηλή θερμοκρασία για διατήρηση της ελαστικότητας.</span>
+              </li>
+              <li class="stage-spec-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Χειρωνακτική επιθεώρηση του «δεσίματος» από την κα Ευανθία.</span>
+              </li>
+              <li class="stage-spec-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Αργός χρόνος όπτησης που χαρίζει το διάσημο απαλό μάσημα.</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- STAGE 3: Το Άρωμα & η Υφή -->
+        <article class="scrolly-stage" id="stage2">
+          <div class="scrolly-visual-box">
+            <img src="https://images.unsplash.com/photo-1508737666275-520e73680962?auto=format&fit=crop&w=1200&q=80" alt="Έγχυση φυσικών αρωμάτων" class="scrolly-visual-img" id="stageImg2">
+            <div class="scrolly-visual-overlay"></div>
+            <div class="stage-interactive-widget">
+              <div>
+                <div class="widget-stat-title">Έγχυση Αρωμάτων</div>
+                <div class="widget-stat-value">Ροδόνερο • Μαστίχα Χίου • Περγαμόντο</div>
+              </div>
+              <div class="widget-pulse-dot" style="background: #10b981; box-shadow: 0 0 10px #10b981;"></div>
+            </div>
+          </div>
+
+          <div class="scrolly-text-box">
+            <div class="stage-step-tag">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5c0 3-5 9-5 9s-5-6-5-9a5 5 0 0 1 5-5z"/></svg>
+              <span>ΣΤΑΔΙΟ 03 / 04</span>
+            </div>
+            <h3 class="stage-title">Το Άρωμα &amp; η Βελούδινη Υφή</h3>
+            <p class="stage-description">
+              Την ακριβή στιγμή που η μάζα αποσύρεται από τη φωτιά, ενσωματώνονται τα φυσικά αιθέρια έλαια: σταγόνες από γνήσιο ροδόνερο, δάκρυα μαστίχας Χίου, περγαμόντο και τραγανοί καβουρδισμένοι ξηροί καρποί.
+            </p>
+            <ul class="stage-spec-list">
+              <li class="stage-spec-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Μηδενική έκθεση των ευαίσθητων αρωμάτων σε υπερβολική θερμότητα.</span>
+              </li>
+              <li class="stage-spec-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Ομοιόμορφη κατανομή των καρυδιών και αμυγδάλων στη μάζα.</span>
+              </li>
+              <li class="stage-spec-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Άπλωμα σε παραδοσιακές λαμαρίνες για φυσική 24ωρη ωρίμανση.</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- STAGE 4: Κοπή & Άχνη Ζάχαρη -->
+        <article class="scrolly-stage" id="stage3">
+          <div class="scrolly-visual-box">
+            <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=1200&q=80" alt="Κοπή σε κύβους και πασπάλισμα άχνης" class="scrolly-visual-img" id="stageImg3">
+            <div class="scrolly-visual-overlay"></div>
+            <div class="stage-interactive-widget">
+              <div>
+                <div class="widget-stat-title">Τελικό Φινίρισμα</div>
+                <div class="widget-stat-value">Χειροποίητη Κοπή &amp; Μεταξένια Άχνη</div>
+              </div>
+              <div class="widget-pulse-dot" style="background: #38bdf8; box-shadow: 0 0 10px #38bdf8;"></div>
+            </div>
+          </div>
+
+          <div class="scrolly-text-box">
+            <div class="stage-step-tag">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+              <span>ΣΤΑΔΙΟ 04 / 04</span>
+            </div>
+            <h3 class="stage-title">Η Κοπή &amp; το Πασπάλισμα Άχνης</h3>
+            <p class="stage-description">
+              Αφού το λουκούμι ξεκουραστεί και σταθεροποιηθεί φυσικά, κόβεται με παραδοσιακές λεπίδες σε τέλειους κύβους και πασπαλίζεται πλουσιοπάροχα με απαλή άχνη ζάχαρη που προστατεύει τη φρεσκάδα του.
+            </p>
+            <ul class="stage-spec-list">
+              <li class="stage-spec-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Χειροποίητος διαχωρισμός χωρίς συγκόλληση των κύβων.</span>
+              </li>
+              <li class="stage-spec-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Αέρινη επικάλυψη άχνης που δεν βαραίνει τη γεύση.</span>
+              </li>
+              <li class="stage-spec-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Άμεση συσκευασία για διατήρηση της απαλής υφής.</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- BOTTOM SCROLLY BAR -->
+      <div class="scrolly-bottom-bar">
+        <div>
+          <span>Εργαστήριο Ευανθίας Γκέτσιου</span> • 5ο χλμ. Λάρισας - Φαλάνης
+        </div>
+        <div class="scrolly-hint">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>
+          <span>Κυλήστε προς τα κάτω για να παρακολουθήσετε τη διαδικασία</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SIGNATURE PRODUCTS SHOWCASE (ΤΑ ΠΡΟΪΟΝΤΑ ΜΑΣ)
+       ========================================================================== -->
+  <section id="products" class="section-spacing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Η Συλλογή του Εργαστηρίου
+        </span>
+        <h2 class="section-title">Τα Αυθεντικά Παραδοσιακά Λουκούμια</h2>
+        <p class="section-subtitle">
+          Γνήσιες γεύσεις από την πλούσια ελληνική παράδοση. Χωρίς πρόσθετα, με απαράμιλλη βελούδινη υφή που συνοδεύει ιδανικά τον ελληνικό καφέ και κάθε γιορτινή περίσταση.
+        </p>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="products-filter-bar">
+        <button class="p-filter-btn active" onclick="filterProducts('all', this)">Όλες οι Γεύσεις</button>
+        <button class="p-filter-btn" onclick="filterProducts('classic', this)">Κλασικά Αρώματα</button>
+        <button class="p-filter-btn" onclick="filterProducts('nuts', this)">Με Ξηρούς Καρπούς</button>
+        <button class="p-filter-btn" onclick="filterProducts('citrus', this)">Εσπεριδοειδή &amp; Φρούτα</button>
+      </div>
+
+      <!-- PRODUCTS GRID (4-5 SIGNATURE ITEMS WITH ZERO PRICES / CART) -->
+      <div class="products-grid">
+
+        <!-- PRODUCT 1: Τριαντάφυλλο -->
+        <article class="product-card" data-category="classic">
+          <div class="product-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=800&q=80" alt="Λουκούμι Τριαντάφυλλο">
+            <span class="product-badge-flavor">Signature Classic</span>
+          </div>
+          <div class="product-body">
+            <div class="product-taste-tag">Παραδοσιακό Άρωμα</div>
+            <h3 class="product-title">Λουκούμι Τριαντάφυλλο</h3>
+            <p class="product-desc">
+              Το διαχρονικό αρχοντικό κέρασμα. Παρασκευάζεται με αγνό ελληνικό ροδόνερο διπλής απόσταξης, προσφέροντας ντελικάτο λουλουδένιο άρωμα και απαλή ροδαλιά απόχρωση.
+            </p>
+            <div class="product-packaging-info">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+              <span>Συσκευασίες: 250g, 500g, 1kg &amp; Χύμα B2B</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.76rem;" onclick="openProductModal('Λουκούμι Τριαντάφυλλο', 'Παρασκευασμένο με παραδοσιακό ροδόνερο, ζάχαρη και άμυλο. Ένα κλασικό ελληνικό κέρασμα απαράμιλλης αρχοντιάς.', 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=900&q=80')">
+                <span>Λεπτομέρειες</span>
+              </button>
+              <a href="#contact" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.76rem;">
+                <span>Ζήτηση Δειγμάτων</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT 2: Μαστίχα Χίου -->
+        <article class="product-card" data-category="classic">
+          <div class="product-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80" alt="Λουκούμι Μαστίχα Χίου">
+            <span class="product-badge-flavor">Αυθεντικό Αιγαίο</span>
+          </div>
+          <div class="product-body">
+            <div class="product-taste-tag">Φυσικά Δάκρυα Μαστίχας</div>
+            <h3 class="product-title">Λουκούμι Μαστίχα Χίου</h3>
+            <p class="product-desc">
+              Αυθεντικό αιθέριο έλαιο και κοπανισμένα δάκρυα φυσικής μαστίχας Χίου (ΠΟΠ). Έντονη, δροσερή επίγευση και κρυστάλλινη καθαρότητα στην υφή.
+            </p>
+            <div class="product-packaging-info">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+              <span>Συσκευασίες: 250g, 500g, 1kg &amp; Χύμα B2B</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.76rem;" onclick="openProductModal('Λουκούμι Μαστίχα Χίου', 'Αυθεντική φυσική μαστίχα Χίου, απαλή ζάχαρη και εκλεκτή υφή που αναδεικνύει τον πλούτο της αιγαιοπελαγίτικης φύσης.', 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=900&q=80')">
+                <span>Λεπτομέρειες</span>
+              </button>
+              <a href="#contact" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.76rem;">
+                <span>Ζήτηση Δειγμάτων</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT 3: Περγαμόντο -->
+        <article class="product-card" data-category="citrus">
+          <div class="product-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=800&q=80" alt="Λουκούμι Περγαμόντο">
+            <span class="product-badge-flavor">Εσπεριδοειδή</span>
+          </div>
+          <div class="product-body">
+            <div class="product-taste-tag">Δροσιστική Οξύτητα</div>
+            <h3 class="product-title">Λουκούμι Περγαμόντο</h3>
+            <p class="product-desc">
+              Φυσικό εκχύλισμα περγαμόντου από επιλεγμένες σοδειές. Ισορροπημένη γλυκύτητα με νότες εσπεριδοειδών που χαρίζουν μοναδική φρεσκάδα στον ουρανίσκο.
+            </p>
+            <div class="product-packaging-info">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+              <span>Συσκευασίες: 250g, 500g, 1kg &amp; Κουτιά Δώρου</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.76rem;" onclick="openProductModal('Λουκούμι Περγαμόντο', 'Δροσιστικό ελληνικό περγαμόντο με βελούδινο σώμα και εκλεπτυσμένη επίγευση.', 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=900&q=80')">
+                <span>Λεπτομέρειες</span>
+              </button>
+              <a href="#contact" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.76rem;">
+                <span>Ζήτηση Δειγμάτων</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT 4: Με Καβουρδισμένο Αμύγδαλο & Καρύδι -->
+        <article class="product-card" data-category="nuts">
+          <div class="product-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Λουκούμι με Ξηρούς Καρπούς">
+            <span class="product-badge-flavor">Πλούσια Γεύση</span>
+          </div>
+          <div class="product-body">
+            <div class="product-taste-tag">Ελληνικοί Καρποί</div>
+            <h3 class="product-title">Λουκούμι με Αμύγδαλο &amp; Καρύδι</h3>
+            <p class="product-desc">
+              Φρεσκοκαβουρδισμένα αμύγδαλα και θεσσαλικά καρύδια ενσωματωμένα σε πλούσια καραμελένια μάζα. Τραγανή αντίθεση με το απαλό λουκούμι.
+            </p>
+            <div class="product-packaging-info">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+              <span>Συσκευασίες: 250g, 500g, 1kg &amp; Επίσημες Εκδηλώσεις</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.76rem;" onclick="openProductModal('Λουκούμι με Αμύγδαλο & Καρύδι', 'Εκλεκτοί καβουρδισμένοι καρποί σε παραδοσιακό σιρόπι. Ένα δυναμωτικό, παραδοσιακό γλύκισμα.', 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80')">
+                <span>Λεπτομέρειες</span>
+              </button>
+              <a href="#contact" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.76rem;">
+                <span>Ζήτηση Δειγμάτων</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT 5: Παραδοσιακός Ακανές & Μπουκίτσες -->
+        <article class="product-card" data-category="classic">
+          <div class="product-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=800&q=80" alt="Παραδοσιακός Ακανές & Κεράσματα">
+            <span class="product-badge-flavor">Βουτυράτο Άρωμα</span>
+          </div>
+          <div class="product-body">
+            <div class="product-taste-tag">Αυθεντική Συνταγή</div>
+            <h3 class="product-title">Παραδοσιακός Ακανές &amp; Μπουκιές</h3>
+            <p class="product-desc">
+              Παρασκευασμένο με κατσικίσιο βούτυρο γάλακτος και καβουρδισμένα αμύγδαλα. Βαθύ καραμελωμένο άρωμα και μοναδική πυκνότητα που ξεχωρίζει.
+            </p>
+            <div class="product-packaging-info">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+              <span>Συσκευασίες: 350g, 700g &amp; Κεράσματα Γάμου</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.76rem;" onclick="openProductModal('Παραδοσιακός Ακανές & Μπουκιές', 'Παραδοσιακός ακανές με πλούσιο άρωμα φρέσκου βουτύρου και καβουρδισμένους καρπούς.', 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=900&q=80')">
+                <span>Λεπτομέρειες</span>
+              </button>
+              <a href="#contact" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.76rem;">
+                <span>Ζήτηση Δειγμάτων</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       B2B & WHOLESALE SHOWCASE (ΧΟΝΔΡΙΚΗ & ΕΚΔΗΛΩΣΕΙΣ)
+       ========================================================================== -->
+  <section id="wholesale" class="section-spacing" style="padding-top: 0;">
+    <div class="container">
+      <div class="b2b-banner">
+        <div class="b2b-grid">
+          <div>
+            <span class="section-eyebrow">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              Συνεργασίες Χονδρικής &amp; Εκδηλώσεις
+            </span>
+            <h3 class="b2b-title">Τροφοδοσία Επαγγελματιών &amp; Κοινωνικών Εκδηλώσεων</h3>
+            <p class="b2b-text">
+              Συνεργαζόμαστε σταθερά με <strong>ζαχαροπλαστεία, παραδοσιακά καφενεία, ξενοδοχεία, delicatessen και διοργανωτές γάμων / βαπτίσεων</strong> σε όλη την Ελλάδα. Προσφέρουμε ευέλικτες συσκευασίες, σταθερή χειροποίητη ποιότητα και άμεση αποστολή από το εργαστήριο της Λάρισας.
+            </p>
+            <div class="b2b-perks">
+              <div class="b2b-perk-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Ειδικές τιμές χονδρικής</span>
+              </div>
+              <div class="b2b-perk-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Ατομικά τυλιγμένες μπουκιές</span>
+              </div>
+              <div class="b2b-perk-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Συσκευασίες μπομπονιέρας</span>
+              </div>
+              <div class="b2b-perk-item">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Δωρεάν αποστολή δειγματολογίου</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="b2b-action-card">
+            <h4 class="b2b-action-title">Ενδιαφέρεστε για Συνεργασία;</h4>
+            <p class="b2b-action-desc">
+              Επικοινωνήστε απευθείας με την κυρία Ευανθία για να συζητήσουμε τις ανάγκες της επιχείρησής σας ή της εκδήλωσής σας.
+            </p>
+            <a href="tel:6984350985" class="btn btn-primary" style="width: 100%; margin-bottom: 0.8rem;">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>Τηλεφωνική Επαφή: 6984 350985</span>
+            </a>
+            <a href="#contact" class="btn btn-outline" style="width: 100%;">
+              <span>Φόρμα Ενδιαφέροντος</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       LOCATION & CONTACT SECTION (5ο ΧΛΜ. ΛΑΡΙΣΑΣ - ΦΑΛΑΝΗΣ)
+       ========================================================================== -->
+  <section id="contact" class="section-spacing" style="background: var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Επικοινωνία &amp; Επίσκεψη
+        </span>
+        <h2 class="section-title">Ελάτε σε Επαφή με το Εργαστήριο</h2>
+        <p class="section-subtitle">
+          Βρισκόμαστε στο 5ο χλμ. του δρόμου Λάρισας - Φαλάνης. Επισκεφθείτε μας για φρέσκα λουκούμια κατευθείαν από το καζάνι ή στείλτε μας το αίτημά σας.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- CONTACT INFO & MAP CARD -->
+        <div class="contact-info-card">
+          <h3 class="contact-info-title">Ευανθία Γκέτσιου</h3>
+          <p class="contact-info-desc">
+            Παραδοσιακό Εργαστήριο Παραγωγής Χειροποίητων Λουκουμιών &amp; Γλυκισμάτων
+          </p>
+
+          <div class="contact-details-list">
+            <!-- LOCATION -->
+            <div class="contact-detail-row">
+              <div class="contact-icon-bubble">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-row-title">Διεύθυνση Εργαστηρίου</div>
+                <div class="contact-row-value">5ο χλμ. Λάρισας - Φαλάνης, Λάρισα, Τ.Κ. 41500</div>
+              </div>
+            </div>
+
+            <!-- PHONE -->
+            <div class="contact-detail-row">
+              <div class="contact-icon-bubble">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-row-title">Τηλέφωνο Επικοινωνίας</div>
+                <div class="contact-row-value">
+                  <a href="tel:6984350985">6984 350985</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="contact-detail-row">
+              <div class="contact-icon-bubble">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-row-title">Ηλεκτρονικό Ταχυδρομείο</div>
+                <div class="contact-row-value">
+                  <a href="mailto:euanthiagetsiou2000@gmail.com">euanthiagetsiou2000@gmail.com</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- HOURS -->
+            <div class="contact-detail-row">
+              <div class="contact-icon-bubble">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <div class="contact-row-title">Ωράριο Λειτουργίας</div>
+                <div class="contact-row-value">Δευτέρα - Σάββατο: 08:00 - 20:00 (Κυριακή κλειστά)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- EMBEDDED MAP PLACEHOLDER -->
+          <div class="map-preview-wrap">
+            <iframe 
+              src="https://maps.google.com/maps?q=Larissa+Falani+Greece&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+              title="Χάρτης Εργαστηρίου Ευανθία Γκέτσιου - 5ο χλμ. Λάρισας - Φαλάνης"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- WHOLESALE / RETAIL INQUIRY FORM -->
+        <div class="form-card">
+          <div class="form-header">
+            <h3>Φόρμα Ενδιαφέροντος</h3>
+            <p>Συμπληρώστε τα στοιχεία σας για τιμοκατάλογο χονδρικής, δείγματα ή πληροφορίες εκδηλώσεων.</p>
+          </div>
+
+          <form id="inquiryForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="senderName">Ονοματεπώνυμο *</label>
+                <input type="text" id="senderName" class="form-input" placeholder="π.χ. Νικόλαος Παπαδόπουλος" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="senderPhone">Τηλέφωνο Επικοινωνίας *</label>
+                <input type="tel" id="senderPhone" class="form-input" placeholder="π.χ. 6900 000000" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="senderEmail">Email *</label>
+                <input type="email" id="senderEmail" class="form-input" placeholder="name@example.gr" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inquiryType">Τύπος Ενδιαφέροντος</label>
+                <select id="inquiryType" class="form-select">
+                  <option value="wholesale">Χονδρική Πώληση (Κατάστημα / Delicatessen)</option>
+                  <option value="horeca">Καφεστίαση &amp; Ξενοδοχεία (HORECA)</option>
+                  <option value="events">Κοινωνική Εκδήλωση (Γάμος / Βάπτιση)</option>
+                  <option value="retail">Λιανική / Άλλο Ερώτημα</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="senderMessage">Μήνυμα / Ποσότητα ή Γεύσεις που σας ενδιαφέρουν</label>
+              <textarea id="senderMessage" class="form-textarea" placeholder="Γράψτε μας τις γεύσεις ή τις ποσότητες που επιθυμείτε..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.95rem;">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <span>Αποστολή Αιτήματος</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- COL 1: BRAND -->
+        <div>
+          <div class="footer-brand-title">elukumi.gr</div>
+          <p class="footer-brand-desc">
+            Παραδοσιακό εργαστήριο χειροποίητης παραγωγής λουκουμιών και γλυκισμάτων της Ευανθίας Γκέτσιου. Αγνές ελληνικές γεύσεις με ιστορία.
+          </p>
+          <div class="footer-socials">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- COL 2: QUICK LINKS -->
+        <div>
+          <h4 class="footer-col-title">Πλοήγηση</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="#home">Αρχική</a></li>
+            <li class="footer-link-item"><a href="#about">Η Ιστορία μας</a></li>
+            <li class="footer-link-item"><a href="#scrolly-journey">Τέχνη Παραγωγής</a></li>
+            <li class="footer-link-item"><a href="#products">Συλλογή Γεύσεων</a></li>
+            <li class="footer-link-item"><a href="#wholesale">Χονδρική</a></li>
+            <li class="footer-link-item"><a href="#contact">Επικοινωνία</a></li>
+          </ul>
+        </div>
+
+        <!-- COL 3: SIGNATURE FLAVORS -->
+        <div>
+          <h4 class="footer-col-title">Γεύσεις</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="#products">Λουκούμι Τριαντάφυλλο</a></li>
+            <li class="footer-link-item"><a href="#products">Λουκούμι Μαστίχα Χίου</a></li>
+            <li class="footer-link-item"><a href="#products">Λουκούμι Περγαμόντο</a></li>
+            <li class="footer-link-item"><a href="#products">Λουκούμι με Αμύγδαλο &amp; Καρύδι</a></li>
+            <li class="footer-link-item"><a href="#products">Παραδοσιακός Ακανές</a></li>
+          </ul>
+        </div>
+
+        <!-- COL 4: CONTACT INFO -->
+        <div>
+          <h4 class="footer-col-title">Στοιχεία Εργαστηρίου</h4>
+          <ul class="footer-links-list" style="font-size: 0.85rem;">
+            <li style="display: flex; gap: 0.6rem; margin-bottom: 0.8rem;">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>5ο χλμ. Λάρισας - Φαλάνης, Λάρισα</span>
+            </li>
+            <li style="display: flex; gap: 0.6rem; margin-bottom: 0.8rem;">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:6984350985" style="color: #ffffff; font-weight: 700;">6984 350985</a>
+            </li>
+            <li style="display: flex; gap: 0.6rem;">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:euanthiagetsiou2000@gmail.com">euanthiagetsiou2000@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 elukumi.gr — Ευανθία Γκέτσιου. Όλα τα δικαιώματα διατηρούνται.</div>
+        <div>Παραδοσιακή Παραγωγή Λουκουμιών • Λάρισα - Φαλάνη</div>
+        <div>
+          <a href="#home" style="color: var(--secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span>Επιστροφή στην κορυφή</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS & TOAST NOTIFICATION
+       ========================================================================== -->
+  <!-- PRODUCT MODAL -->
+  <div id="productModal" class="product-modal" onclick="closeProductModal(event)">
+    <div class="product-modal-card" onclick="event.stopPropagation()">
+      <button class="plan-close-btn" onclick="closeProductModal()" aria-label="Κλείσιμο παραθύρου">
+        <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <img id="modalImg" src="" alt="Προϊόν" class="product-modal-img">
+      <div class="product-modal-content">
+        <span class="product-badge-flavor" style="position: static; display: inline-block; margin-bottom: 0.8rem;">Χειροποίητη Παραγωγή</span>
+        <h3 id="modalTitle" style="font-family: var(--heading-font); font-size: 1.8rem; color: var(--primary); margin-bottom: 0.6rem;">Τίτλος</h3>
+        <p id="modalDesc" style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.6rem;">Περιγραφή</p>
+        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+          <a href="#contact" class="btn btn-primary" onclick="closeProductModal()">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Εκδήλωση Ενδιαφέροντος</span>
+          </a>
+          <a href="tel:6984350985" class="btn btn-outline">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>Κλήση: 6984 350985</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toastBox" class="toast-box">
+    <svg class="icon icon-lg" style="color: var(--secondary);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+    <div>
+      <strong style="display: block; font-size: 0.95rem;">Το αίτημά σας εστάλη επιτυχώς!</strong>
+      <span style="font-size: 0.82rem; color: rgba(255, 255, 255, 0.75);">Η κυρία Ευανθία θα επικοινωνήσει άμεσα μαζί σας.</span>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT: TIGHT SCROLL-BOUND SCROLLYTELLING ENGINE & INTERACTIVITY
+       ========================================================================== -->
+  <script>
+    // --------------------------------------------------------------------------
+    // 1. CONCEPT SWITCHER ENGINE (3 OPTIONS)
+    // --------------------------------------------------------------------------
+    function switchConcept(concept) {
+      document.documentElement.setAttribute('data-concept', concept);
+      document.querySelectorAll('.concept-btn').forEach(btn => {
+        if (btn.getAttribute('data-concept') === concept) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      // Store user preference in localStorage
+      try {
+        localStorage.setItem('elukumi_concept', concept);
+      } catch (e) {}
+    }
+
+    // Restore saved concept if exists
+    try {
+      const savedConcept = localStorage.getItem('elukumi_concept');
+      if (savedConcept) switchConcept(savedConcept);
+    } catch (e) {}
+
+    // --------------------------------------------------------------------------
+    // 2. SCROLLYTELLING ENGINE (TIGHT MOVEMENT TIED TO SCROLL)
+    // --------------------------------------------------------------------------
+    const scrollyContainer = document.getElementById('scrolly-journey');
+    const scrollyFill = document.getElementById('scrollyFill');
+    const scrollyPercent = document.getElementById('scrollyPercent');
+    const stepTabs = document.querySelectorAll('.scrolly-step-tab');
+    const stages = [
+      document.getElementById('stage0'),
+      document.getElementById('stage1'),
+      document.getElementById('stage2'),
+      document.getElementById('stage3')
+    ];
+    const cauldronTemp = document.getElementById('cauldronTemp');
+
+    let currentActiveStep = 0;
+    let isTicking = false;
+
+    function updateScrollytelling() {
+      if (!scrollyContainer) return;
+
+      const rect = scrollyContainer.getBoundingClientRect();
+      const containerHeight = scrollyContainer.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      // Calculate scroll progress within this 420vh section (0.0 to 1.0)
+      const scrolled = -rect.top;
+      const totalScrollable = containerHeight - windowHeight;
+
+      if (scrolled >= 0 && scrolled <= totalScrollable) {
+        const progress = Math.min(Math.max(scrolled / totalScrollable, 0), 1);
+        const percent = Math.round(progress * 100);
+
+        // Update progress bar & label
+        if (scrollyFill) scrollyFill.style.width = percent + '%';
+        if (scrollyPercent) scrollyPercent.innerText = percent + '%';
+
+        // 4 stages: segment [0.0 - 0.25], [0.25 - 0.50], [0.50 - 0.75], [0.75 - 1.0]
+        const stepIndex = Math.min(Math.floor(progress * 4), 3);
+
+        if (stepIndex !== currentActiveStep) {
+          setActiveStage(stepIndex);
+        }
+
+        // Tightly tied micro-transformations based on exact scroll within current stage:
+        const stageProgress = (progress * 4) - stepIndex; // 0.0 to 1.0 inside stage
+
+        // Cauldron temperature simulation in Stage 2
+        if (stepIndex === 1 && cauldronTemp) {
+          const tempVal = (108.0 + stageProgress * 12.0).toFixed(1);
+          cauldronTemp.innerText = tempVal + ' °C • Σταθερή Ανάδευση';
+        }
+
+        // Subtle image parallax zoom tied to progress
+        const activeImg = document.getElementById('stageImg' + stepIndex);
+        if (activeImg) {
+          const scale = 1.02 + stageProgress * 0.06;
+          activeImg.style.transform = `scale(${scale})`;
+        }
+      } else if (scrolled < 0) {
+        if (scrollyFill) scrollyFill.style.width = '0%';
+        if (scrollyPercent) scrollyPercent.innerText = '0%';
+        if (currentActiveStep !== 0) setActiveStage(0);
+      } else if (scrolled > totalScrollable) {
+        if (scrollyFill) scrollyFill.style.width = '100%';
+        if (scrollyPercent) scrollyPercent.innerText = '100%';
+        if (currentActiveStep !== 3) setActiveStage(3);
+      }
+
+      isTicking = false;
+    }
+
+    function setActiveStage(index) {
+      currentActiveStep = index;
+      stages.forEach((st, i) => {
+        if (i === index) {
+          st.classList.add('active');
+        } else {
+          st.classList.remove('active');
+        }
+      });
+      stepTabs.forEach((tab, i) => {
+        if (i === index) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+    }
+
+    function jumpToStep(index) {
+      if (!scrollyContainer) return;
+      const containerTop = scrollyContainer.offsetTop;
+      const containerHeight = scrollyContainer.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const totalScrollable = containerHeight - windowHeight;
+
+      const targetScroll = containerTop + (totalScrollable * (index / 3.8));
+      window.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth'
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!isTicking) {
+        window.requestAnimationFrame(updateScrollytelling);
+        isTicking = true;
+      }
+    }, { passive: true });
+
+    // Initial run
+    updateScrollytelling();
+
+    // --------------------------------------------------------------------------
+    // 3. PRODUCT CATALOG FILTERING
+    // --------------------------------------------------------------------------
+    function filterProducts(category, btn) {
+      document.querySelectorAll('.p-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // --------------------------------------------------------------------------
+    // 4. MODALS & FORMS
+    // --------------------------------------------------------------------------
+    function openProductModal(title, desc, img) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('modalImg').src = img;
+      document.getElementById('productModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProductModal(e) {
+      document.getElementById('productModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function togglePlanDrawer(e) {
+      const drawer = document.getElementById('planDrawer');
+      drawer.classList.toggle('active');
+      if (drawer.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const toast = document.getElementById('toastBox');
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 5000);
+      document.getElementById('inquiryForm').reset();
+    }
+
+    function notifyApproval() {
+      const toast = document.getElementById('toastBox');
+      toast.querySelector('strong').innerText = 'Εγκρίθηκε το Concept 1!';
+      toast.querySelector('span').innerText = 'Η επιλογή σας καταχωρήθηκε για την τελική παραγωγή.';
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 5000);
+    }
+
+    function toggleMobileNav() {
+      const navMenu = document.querySelector('.nav-menu');
+      if (navMenu.style.display === 'flex') {
+        navMenu.style.display = 'none';
+      } else {
+        navMenu.style.display = 'flex';
+        navMenu.style.flexDirection = 'column';
+        navMenu.style.position = 'absolute';
+        navMenu.style.top = '100%';
+        navMenu.style.left = '0';
+        navMenu.style.width = '100%';
+        navMenu.style.background = 'var(--surface)';
+        navMenu.style.padding = '1.5rem';
+        navMenu.style.borderBottom = '1px solid var(--border)';
+        navMenu.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+      }
+    }
+  </script>
+</body>
+</html>

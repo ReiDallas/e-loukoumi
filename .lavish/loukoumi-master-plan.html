@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="el" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-loukoumi.gr — Lavish Master Plan & Design Review</title>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=GFS+Didot&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- DaisyUI & Tailwind CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5.5.19/daisyui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5.5.19/themes.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.2.4/dist/index.global.js"></script>
+
+  <style>
+    :root {
+      --bg-dark: #0d1117;
+      --card-dark: #161b22;
+      --border-dark: #30363d;
+      --gold-accent: #c59b27;
+      --rose-accent: #c25d71;
+      --espresso: #231815;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: #e6edf3;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+    }
+
+    .font-heritage {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .font-gourmet {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    .font-boutique {
+      font-family: 'GFS Didot', serif;
+    }
+
+    .font-mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Custom highlight styles */
+    .badge-no-eshop {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+    }
+
+    .badge-b2b {
+      background: rgba(197, 155, 39, 0.15);
+      border: 1px solid rgba(197, 155, 39, 0.4);
+      color: #fde047;
+    }
+
+    .tab-active-custom {
+      border-bottom: 2px solid var(--gold-accent) !important;
+      color: var(--gold-accent) !important;
+    }
+  </style>
+</head>
+<body class="p-4 sm:p-8 max-w-7xl mx-auto space-y-10">
+
+  <!-- TOP HEADER & STATUS BAR -->
+  <header class="border-b border-[#30363d] pb-6">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-3 flex-wrap">
+          <span class="badge badge-b2b text-xs font-bold uppercase tracking-wider px-3 py-2">Brand Showcase &amp; B2B Catalogue</span>
+          <span class="badge badge-no-eshop text-xs font-bold uppercase tracking-wider px-3 py-2">Χωρίς E-Shop (No Cart / Checkout)</span>
+          <span class="text-xs font-mono-code text-gray-400">e-loukoumi.gr</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold mt-3 text-white tracking-tight flex items-center gap-3">
+          <span>🏛️</span> Στρατηγικό Πλάνο &amp; Αρχιτεκτονική <span class="text-[#c59b27]">e-loukoumi.gr</span>
+        </h1>
+        <p class="text-sm text-gray-300 mt-1 max-w-3xl">
+          Εκθετήριο παραδοσιακής τέχνης &amp; ψηφιακός κατάλογος χονδρικής / εκδηλώσεων για το εργαστήριο της κας Ευανθίας Γκέτσιου (5ο χλμ. Λάρισας - Φαλάνης).
+        </p>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <button data-hermes-send="Εγκρίνω το πλάνο χωρίς e-shop. Προχώρησε στην υλοποίηση του site." class="btn btn-sm btn-primary bg-[#c59b27] hover:bg-[#a9831e] border-none text-black font-bold">
+          ✓ Έγκριση &amp; Υλοποίηση Site
+        </button>
+        <button onclick="window.print()" class="btn btn-sm btn-outline border-gray-600 text-gray-200 hover:bg-gray-800">
+          📄 Εκτύπωση
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- KEY SPECIFICATION SUMMARY CARDS -->
+  <section class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div class="bg-[#161b22] border border-[#30363d] rounded-2xl p-5 space-y-2">
+      <div class="text-xs font-bold uppercase tracking-wider text-[#c59b27]">1. Προσανατολισμός</div>
+      <div class="text-lg font-bold text-white">Showcase &amp; B2B</div>
+      <p class="text-xs text-gray-400">
+        Όχι e-commerce καλάθια ή κάρτες. Ανάδειξη της αυθεντικής συνταγής, της ποιότητας και των εκλεκτών πρώτων υλών.
+      </p>
+    </div>
+
+    <div class="bg-[#161b22] border border-[#30363d] rounded-2xl p-5 space-y-2">
+      <div class="text-xs font-bold uppercase tracking-wider text-[#c59b27]">2. Κοινό Στόχος</div>
+      <div class="text-lg font-bold text-white">Χονδρική &amp; Εκδηλώσεις</div>
+      <p class="text-xs text-gray-400">
+        Καφεστίαση (ελληνικός καφές), delicatessen, ζαχαροπλαστεία, ξενοδοχεία, καθώς και μπομπονιέρες γάμου/βάπτισης.
+      </p>
+    </div>
+
+    <div class="bg-[#161b22] border border-[#30363d] rounded-2xl p-5 space-y-2">
+      <div class="text-xs font-bold uppercase tracking-wider text-[#c59b27]">3. Call-to-Action</div>
+      <div class="text-lg font-bold text-white">Δείγματα &amp; Επικοινωνία</div>
+      <p class="text-xs text-gray-400">
+        Άμεση τηλεφωνική κλήση, φόρμα αιτήματος δειγμάτων γευσιγνωσίας και καθοδήγηση επίσκεψης στο 5ο χλμ. Λάρισας - Φαλάνης.
+      </p>
+    </div>
+
+    <div class="bg-[#161b22] border border-[#30363d] rounded-2xl p-5 space-y-2">
+      <div class="text-xs font-bold uppercase tracking-wider text-[#c59b27]">4. Αισθητική Ταυτότητα</div>
+      <div class="text-lg font-bold text-white">Modern Artisanal</div>
+      <p class="text-xs text-gray-400">
+        Εκλεπτυσμένο ύφος, ελληνική παράδοση σε χάλκινο καζάνι, γήινα χρώματα, αισθητηριακές φωτογραφίες υψηλής ανάλυσης.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3 DESIGN CONCEPTS COMPARISON -->
+  <section class="space-y-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#30363d] pb-3">
+      <div>
+        <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+          <span>🎨</span> 3 Εναλλακτικές Σχεδιαστικές Κατευθύνσεις (Design Directions)
+        </h2>
+        <p class="text-xs text-gray-400 mt-0.5">Επιλέξτε την αισθητική ταυτότητα που ταιριάζει καλύτερα στην εικόνα του εργαστηρίου.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- CONCEPT 1 -->
+      <div class="bg-[#161b22] border-2 border-[#6D1424] hover:border-[#c59b27] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="badge bg-[#6D1424] text-white text-xs font-bold">Concept 1</span>
+            <span class="text-xs font-mono-code text-gray-400">Serif: Cormorant</span>
+          </div>
+
+          <h3 class="font-heritage text-2xl font-bold text-white tracking-wide">Παραδοσιακό Αρχοντικό</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Κλασική αρχοντική αισθητική παλαιάς ελληνικής ζαχαροπλαστικής. Εμπνευσμένο από τις αυθεντικές συνταγές, τη Σύρο και τα θεσσαλικά αρχοντικά.
+          </p>
+
+          <div class="space-y-2 pt-2">
+            <div class="text-[11px] font-bold uppercase text-gray-400">Χρωματική Παλέτα:</div>
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-full bg-[#6D1424] border border-white/20" title="Βαθύ Βυσσινί #6D1424"></div>
+              <div class="w-7 h-7 rounded-full bg-[#C89D4B] border border-white/20" title="Χρυσό Μελιού #C89D4B"></div>
+              <div class="w-7 h-7 rounded-full bg-[#FAF7F2] border border-black/20" title="Ιβουάρ Περγαμηνής #FAF7F2"></div>
+              <div class="w-7 h-7 rounded-full bg-[#231815] border border-white/20" title="Σκούρο Espresso #231815"></div>
+            </div>
+          </div>
+
+          <ul class="text-xs text-gray-300 space-y-1.5 pt-2">
+            <li>✓ Αυστηρή κυκλική σφραγίδα εργαστηρίου</li>
+            <li>✓ Έμφαση στα χάλκινα καζάνια &amp; την ιστορία</li>
+            <li>✓ Ιδανικό για παραδοσιακά καφενεία &amp; τουριστικά σημεία</li>
+          </ul>
+        </div>
+
+        <div class="pt-6 mt-4 border-t border-[#30363d]">
+          <button data-hermes-send="Επιλέγω το Concept 1: Παραδοσιακό Αρχοντικό." class="btn btn-sm w-full bg-[#6D1424] hover:bg-[#851a2d] text-white border-none font-bold">
+            Επιλογή Concept 1
+          </button>
+        </div>
+      </div>
+
+      <!-- CONCEPT 2 -->
+      <div class="bg-[#161b22] border-2 border-[#1a382b] hover:border-[#c59b27] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="badge bg-[#1a382b] text-white text-xs font-bold">Concept 2</span>
+            <span class="text-xs font-mono-code text-gray-400">Serif: Playfair</span>
+          </div>
+
+          <h3 class="font-gourmet text-2xl font-bold text-white tracking-wide">Gourmet Delicatessen</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Σύγχρονο, πολυτελές editorial design υψηλής γαστρονομίας. Εστιάζει στη σπανιότητα των πρώτων υλών (μαστίχα Χίου, φυσικό εκχύλισμα περγαμόντου).
+          </p>
+
+          <div class="space-y-2 pt-2">
+            <div class="text-[11px] font-bold uppercase text-gray-400">Χρωματική Παλέτα:</div>
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-full bg-[#1a382b] border border-white/20" title="Βαθύ Πράσινο Φιστικιού #1A382B"></div>
+              <div class="w-7 h-7 rounded-full bg-[#D99B26] border border-white/20" title="Κεχριμπάρι #D99B26"></div>
+              <div class="w-7 h-7 rounded-full bg-[#FFFFFF] border border-black/20" title="Καθαρό Λευκό #FFFFFF"></div>
+              <div class="w-7 h-7 rounded-full bg-[#1A1A1A] border border-white/20" title="Ανθρακί #1A1A1A"></div>
+            </div>
+          </div>
+
+          <ul class="text-xs text-gray-300 space-y-1.5 pt-2">
+            <li>✓ Μινιμαλιστική τυπογραφία &amp; καθαρές γραμμές</li>
+            <li>✓ Προσανατολισμός σε luxury delicatessen &amp; boutique hotels</li>
+            <li>✓ Εστίαση στα premium γευστικά profiles</li>
+          </ul>
+        </div>
+
+        <div class="pt-6 mt-4 border-t border-[#30363d]">
+          <button data-hermes-send="Επιλέγω το Concept 2: Gourmet Delicatessen." class="btn btn-sm w-full bg-[#1a382b] hover:bg-[#254f3d] text-white border-none font-bold">
+            Επιλογή Concept 2
+          </button>
+        </div>
+      </div>
+
+      <!-- CONCEPT 3 -->
+      <div class="bg-[#161b22] border-2 border-[#D47A8A] hover:border-[#c59b27] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="badge bg-[#D47A8A] text-white text-xs font-bold">Concept 3</span>
+            <span class="text-xs font-mono-code text-gray-400">Serif: GFS Didot</span>
+          </div>
+
+          <h3 class="font-boutique text-2xl font-bold text-white tracking-wide">Pastel Boutique &amp; Events</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Απαλό, ρομαντικό και αέρινο στυλ με πούδρα άχνης ζάχαρης και ροδόσταγμα. Έμφαση σε μπομπονιέρες, βαπτίσεις, γάμους και custom κουτιά δώρου.
+          </p>
+
+          <div class="space-y-2 pt-2">
+            <div class="text-[11px] font-bold uppercase text-gray-400">Χρωματική Παλέτα:</div>
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-full bg-[#D47A8A] border border-white/20" title="Παστέλ Ροδόνερο #D47A8A"></div>
+              <div class="w-7 h-7 rounded-full bg-[#FDFBF7] border border-black/20" title="Άχνη Ζάχαρη #FDFBF7"></div>
+              <div class="w-7 h-7 rounded-full bg-[#E8C5C8] border border-white/20" title="Απαλό Ροζ #E8C5C8"></div>
+              <div class="w-7 h-7 rounded-full bg-[#2B211E] border border-white/20" title="Βαθύ Espresso #2B211E"></div>
+            </div>
+          </div>
+
+          <ul class="text-xs text-gray-300 space-y-1.5 pt-2">
+            <li>✓ Ρομαντική αισθητική Didot</li>
+            <li>✓ Εξειδικευμένο τμήμα για γάμο, βάπτιση &amp; δεξιώσεις</li>
+            <li>✓ Προσωποποιημένα πακέτα &amp; κορδέλες</li>
+          </ul>
+        </div>
+
+        <div class="pt-6 mt-4 border-t border-[#30363d]">
+          <button data-hermes-send="Επιλέγω το Concept 3: Pastel Boutique & Events." class="btn btn-sm w-full bg-[#D47A8A] hover:bg-[#b86171] text-white border-none font-bold">
+            Επιλογή Concept 3
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WEBSITE ARCHITECTURE (WITHOUT E-SHOP) -->
+  <section class="space-y-6">
+    <div class="border-b border-[#30363d] pb-3">
+      <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+        <span>📐</span> Αρχιτεκτονική Σελίδας &amp; Δομή Ενοτήτων (Χωρίς E-Shop)
+      </h2>
+      <p class="text-xs text-gray-400 mt-0.5">Αναλυτική ανάλυση των ενοτήτων του επίσημου ιστοτόπου.</p>
+    </div>
+
+    <div class="space-y-4">
+
+      <!-- SECTION 1 -->
+      <div class="bg-[#161b22] border border-[#30363d] rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="space-y-1 max-w-2xl">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-[#c59b27] uppercase">Ενότητα 1</span>
+            <span class="text-sm font-bold text-white">Sticky Header &amp; Top Utility Bar</span>
+          </div>
+          <p class="text-xs text-gray-300">
+            • <strong>Top Bar:</strong> Διεύθυνση (5ο χλμ. Λάρισας - Φαλάνης), Ωράριο (Δευτ-Σαβ 08:00 - 20:00), Email &amp; Τηλέφωνο <code>6984 350985</code>.<br>
+            • <strong>Main Header:</strong> Χειροποίητη σφραγίδα εργαστηρίου, γρήγορη πλοήγηση (Αρχική, Εργαστήριο, Προϊόντα, Χονδρική B2B, Εκδηλώσεις, Επικοινωνία), επιλογέας γλώσσας GR/EN και κύριο CTA: <em>«Ζητήστε Προσφορά Χονδρικής / Δείγματα»</em>.
+          </p>
+        </div>
+        <span class="badge badge-success text-[11px] font-bold">Έτοιμο προς ενσωμάτωση</span>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="bg-[#161b22] border border-[#30363d] rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="space-y-1 max-w-2xl">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-[#c59b27] uppercase">Ενότητα 2</span>
+            <span class="text-sm font-bold text-white">Hero Showcase (Atmospheric Storytelling)</span>
+          </div>
+          <p class="text-xs text-gray-300">
+            • Δυνατός τίτλος: <em>«Η Αυθεντική Τέχνη του Χειροποίητου Λουκουμιού στη Λάρισα»</em>.<br>
+            • Φωτογραφική σύνθεση με φρέσκα λουκούμια, λεπτή άχνη ζάχαρη, ροδόνερο και χάλκινο καζάνι.<br>
+            • Badges εμπιστοσύνης: <strong>100% Χειροποίητο</strong>, <strong>0% Χημικά Συντηρητικά</strong>, <strong>Πανελλαδική Τροφοδοσία B2B</strong>.<br>
+            • Διπλό CTA: <em>«Ανακαλύψτε τις Γεύσεις»</em> &amp; <em>«Συνεργασία Χονδρικής»</em>.
+          </p>
+        </div>
+        <span class="badge badge-success text-[11px] font-bold">Χωρίς Add-to-Cart</span>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="bg-[#161b22] border border-[#30363d] rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="space-y-1 max-w-2xl">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-[#c59b27] uppercase">Ενότητα 3</span>
+            <span class="text-sm font-bold text-white">Το Εργαστήριο &amp; Η Παράδοση της κυρίας Ευανθίας</span>
+          </div>
+          <p class="text-xs text-gray-300">
+            • Αυθεντική αφήγηση για το αργό σιγοβράσιμο σε χάλκινα καζάνια και τη χειρωνακτική ανάδευση.<br>
+            • Ανάλυση εκλεκτών υλικών: γνήσιο ροδόσταγμα, μαστίχα Χίου, φυσικό περγαμόντο, θεσσαλικά καρύδια &amp; αμύγδαλα.<br>
+            • Ανθρώπινη προσέγγιση που αναδεικνύει το μεράκι της κας Ευανθίας έναντι των βιομηχανοποιημένων προϊόντων.
+          </p>
+        </div>
+        <span class="badge badge-success text-[11px] font-bold">Brand Trust</span>
+      </div>
+
+      <!-- SECTION 4 -->
+      <div class="bg-[#161b22] border border-[#30363d] rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="space-y-1 max-w-2xl">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-[#c59b27] uppercase">Ενότητα 4</span>
+            <span class="text-sm font-bold text-white">Κατάλογος Γεύσεων &amp; Εδεσμάτων (Sensory Catalogue)</span>
+          </div>
+          <p class="text-xs text-gray-300">
+            • <strong>Φίλτρα Κατηγοριών:</strong> Παραδοσιακά Λουκούμια, Μπουκίτσες Καφενείου (B2B), Γλυκά του Κουταλιού, Κεράσματα Εκδηλώσεων.<br>
+            • <strong>Κάρτες Προϊόντων:</strong> Γευστικό προφίλ, διαθέσιμες συσκευασίες (250g, 500g, 1kg, κιβώτια 5kg/10kg για καφεστίαση).<br>
+            • <strong>Αντί για κουμπί αγοράς:</strong> Κουμπί <em>«Ζητήστε Προσφορά / Δείγμα»</em> που οδηγεί άμεσα στη φόρμα επικοινωνίας ή κλήση.
+          </p>
+        </div>
+        <span class="badge badge-b2b text-[11px] font-bold">Sensory Experience</span>
+      </div>
+
+      <!-- SECTION 5 -->
+      <div class="bg-[#161b22] border border-[#30363d] rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="space-y-1 max-w-2xl">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-[#c59b27] uppercase">Ενότητα 5</span>
+            <span class="text-sm font-bold text-white">Χονδρική Πώληση B2B &amp; Δωρεάν Δείγματα</span>
+          </div>
+          <p class="text-xs text-gray-300">
+            • Ειδική προσφορά για επαγγελματίες καφεστίασης (μπουκίτσες για συνοδευτικό ελληνικού καφέ σε σταθερή κοπή).<br>
+            • Πρόταση για delicatessen, παντοπωλεία &amp; ξενοδοχεία (welcome treat).<br>
+            • Δυνατότητα παραγγελίας <strong>Δωρεάν Δειγμάτων Γευσιγνωσίας (Sample Box)</strong> για καταστήματα.
+          </p>
+        </div>
+        <span class="badge badge-b2b text-[11px] font-bold">B2B Conversion</span>
+      </div>
+
+      <!-- SECTION 6 -->
+      <div class="bg-[#161b22] border border-[#30363d] rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="space-y-1 max-w-2xl">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-[#c59b27] uppercase">Ενότητα 6</span>
+            <span class="text-sm font-bold text-white">Κοινωνικές Εκδηλώσεις, Γάμος &amp; Βάπτιση</span>
+          </div>
+          <p class="text-xs text-gray-300">
+            • Ειδικές διαμορφώσεις για μπομπονιέρες (ατομικά τυλιγμένες μπουκίτσες ή κουτάκια).<br>
+            • Δυνατότητα custom χρωμάτων και γεύσεων που ταιριάζουν στο concept της εκδήλωσης.<br>
+            • Απευθείας εξυπηρέτηση διοργανωτών (wedding planners) και ιδιωτών.
+          </p>
+        </div>
+        <span class="badge badge-success text-[11px] font-bold">High Value</span>
+      </div>
+
+      <!-- SECTION 7 -->
+      <div class="bg-[#161b22] border border-[#30363d] rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="space-y-1 max-w-2xl">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-[#c59b27] uppercase">Ενότητα 7</span>
+            <span class="text-sm font-bold text-white">Επικοινωνία, Επίσκεψη &amp; 4-Column Footer</span>
+          </div>
+          <p class="text-xs text-gray-300">
+            • Αναλυτικές οδηγίες πρόσβασης στο 5ο χλμ. Λάρισας - Φαλάνης με Google Maps link.<br>
+            • Καθαρά διανυσματικά SVG εικονίδια για τηλέφωνο, email και διεύθυνση (απαγόρευση emojis στα στοιχεία επαφής).<br>
+            • Νομικά κείμενα (GDPR / Όροι), ωράριο λειτουργίας και copyright 2026.
+          </p>
+        </div>
+        <span class="badge badge-success text-[11px] font-bold">Complete Specs</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- IMPLEMENTATION ROADMAP -->
+  <section class="space-y-6">
+    <div class="border-b border-[#30363d] pb-3">
+      <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+        <span>🚀</span> Χρονοδιάγραμμα Υλοποίησης (Step-by-Step Roadmap)
+      </h2>
+      <p class="text-xs text-gray-400 mt-0.5">Τα βήματα από το design μέχρι το τελικό live site.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="bg-[#161b22] border border-[#30363d] rounded-xl p-4 space-y-2">
+        <div class="text-xs font-bold text-[#c59b27]">ΒΗΜΑ 1</div>
+        <div class="text-sm font-bold text-white">Επιλογή Concept</div>
+        <p class="text-xs text-gray-400">Έγκριση μεταξύ Παραδοσιακού, Gourmet ή Boutique.</p>
+      </div>
+
+      <div class="bg-[#161b22] border border-[#30363d] rounded-xl p-4 space-y-2">
+        <div class="text-xs font-bold text-[#c59b27]">ΒΗΜΑ 2</div>
+        <div class="text-sm font-bold text-white">Στήσιμο του Site</div>
+        <p class="text-xs text-gray-400">Καθαρός responsive κώδικας, χωρίς e-shop, με B2B φόρμα &amp; κατάλογο.</p>
+      </div>
+
+      <div class="bg-[#161b22] border border-[#30363d] rounded-xl p-4 space-y-2">
+        <div class="text-xs font-bold text-[#c59b27]">ΒΗΜΑ 3</div>
+        <div class="text-sm font-bold text-white">Προεπισκόπηση &amp; Έλεγχος</div>
+        <p class="text-xs text-gray-400">Έλεγχος σε Desktop &amp; Mobile στο Preview Pane για τελικές λεπτομέρειες.</p>
+      </div>
+
+      <div class="bg-[#161b22] border border-[#30363d] rounded-xl p-4 space-y-2">
+        <div class="text-xs font-bold text-[#c59b27]">ΒΗΜΑ 4</div>
+        <div class="text-sm font-bold text-white">Live Δημοσίευση</div>
+        <p class="text-xs text-gray-400">Δημοσίευση στο e-loukoumi.gr και καταχώριση στο Google Maps.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTION CONFIRMATION BAR -->
+  <footer class="pt-6 border-t border-[#30363d] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+    <div>
+      Επίσημο έγγραφο στρατηγικού σχεδιασμού • Εργαστήριο Ευανθία Γκέτσιου
+    </div>
+    <div class="flex items-center gap-3">
+      <button data-hermes-send="Προχώρησε στην κατασκευή του site με βάση το Concept 1 (Παραδοσιακό Αρχοντικό) χωρίς e-shop." class="btn btn-sm bg-[#c59b27] hover:bg-[#a9831e] text-black font-bold border-none">
+        Κατασκευή Site (Concept 1)
+      </button>
+      <button data-hermes-send="Προχώρησε στην κατασκευή του site με βάση το Concept 2 (Gourmet Delicatessen) χωρίς e-shop." class="btn btn-sm bg-[#1a382b] hover:bg-[#254f3d] text-white font-bold border-none">
+        Κατασκευή Site (Concept 2)
+      </button>
+    </div>
+  </footer>
+
+</body>
+</html>

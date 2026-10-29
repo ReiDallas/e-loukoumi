@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="el" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ευανθία Γκέτσιου | Παραδοσιακό Εργαστήριο Λουκουμιών Λάρισας — B2B Χονδρική</title>
+  <meta name="description" content="Επίσημη ιστοσελίδα πληροφόρησης & χονδρικής πώλησης του εργαστηρίου παραδοσιακών λουκουμιών Ευανθία Γκέτσιου. 5ο χλμ. Λάρισας - Φαλάνης. Μπουκίτσες καφεστίασης, εκλεκτά κεράσματα εκδηλώσεων. Τηλ: 6984 350985.">
+
+  <!-- Google Fonts: GFS Didot, Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=GFS+Didot&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            boutique: {
+              rose: '#C25D71',
+              'rose-dark': '#8E283E',
+              'rose-deep': '#5C1725',
+              'rose-light': '#FCEEF1',
+              'rose-subtle': '#F8E2E6',
+              champagne: '#D4A373',
+              'champagne-light': '#F7EFE6',
+              sugar: '#FDFBF7',
+              cream: '#F7F3EC',
+              espresso: '#231815',
+              muted: '#6E615E',
+              border: '#E8DED8'
+            }
+          },
+          fontFamily: {
+            didot: ['"GFS Didot"', 'serif'],
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Global Styles */
+    body {
+      background-color: #FDFBF7;
+      color: #231815;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-didot-title {
+      font-family: 'GFS Didot', serif;
+    }
+
+    .font-serif-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    /* Clean Vector Icons utility */
+    .icon {
+      display: inline-block;
+      width: 1.25rem;
+      height: 1.25rem;
+      stroke-width: 2;
+      stroke: currentColor;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    /* Subtle Powder Texture Pattern */
+    .bg-powder {
+      background-image: radial-gradient(rgba(194, 93, 113, 0.08) 1px, transparent 0);
+      background-size: 20px 20px;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FDFBF7;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C25D71;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-boutique-rose selection:text-white">
+
+  <!-- =========================================================================
+       1. TOP UTILITY ANNOUNCEMENT BAR (WHOLESALE ONLY)
+       ========================================================================= -->
+  <div class="bg-boutique-rose-deep text-[#F0DFE3] text-xs py-2.5 px-4 border-b border-boutique-rose-dark">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Left Notice -->
+      <div class="flex items-center gap-4 sm:gap-6 flex-wrap">
+        <div class="flex items-center gap-2">
+          <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-boutique-champagne text-boutique-rose-deep">
+            Αποκλειστικα Χονδρικη (B2B)
+          </span>
+          <span class="hidden md:inline text-white/40">•</span>
+          <span class="hidden md:inline">Εργαστήριο: 5ο χλμ. Λάρισας - Φαλάνης, Λάρισα</span>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-2">
+          <svg class="icon w-3.5 h-3.5 text-boutique-champagne" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Ωράριο Εργαστηρίου: Δευτέρα – Σάββατο 08:00 – 20:00</span>
+        </div>
+      </div>
+
+      <!-- Right Contact Info -->
+      <div class="flex items-center gap-5">
+        <a href="mailto:euanthiagetsiou2000@gmail.com" class="hover:text-boutique-champagne transition flex items-center gap-1.5 text-xs">
+          <svg class="icon w-3.5 h-3.5 text-boutique-champagne" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span class="hidden sm:inline">euanthiagetsiou2000@gmail.com</span>
+          <span class="sm:hidden">Email</span>
+        </a>
+        <div class="h-3 w-px bg-white/20"></div>
+        <a href="tel:6984350985" class="font-bold text-white hover:text-boutique-champagne transition flex items-center gap-1.5 text-xs">
+          <svg class="icon w-3.5 h-3.5 text-boutique-champagne" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>6984 350985</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. STICKY HEADER & BOUTIQUE NAVIGATION
+       ========================================================================= -->
+  <header id="mainHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-boutique-border shadow-xs transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Seal Left -->
+      <a href="#home" class="flex items-center gap-3.5 group">
+        <div class="w-12 h-12 rounded-full bg-boutique-rose-dark border-2 border-boutique-champagne flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-300">
+          <svg class="w-6 h-6 text-boutique-champagne" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-didot-title text-2xl font-bold tracking-tight text-boutique-rose-deep leading-tight">Ευανθία Γκέτσιου</span>
+          <span class="text-[9px] uppercase tracking-widest text-boutique-muted font-bold">Παραδοσιακο Εργαστηριο Λουκουμιων • B2B</span>
+        </div>
+      </a>
+
+      <!-- Center Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="#home" class="text-sm font-semibold text-boutique-espresso hover:text-boutique-rose transition">Αρχική</a>
+        <a href="#about" class="text-sm font-semibold text-boutique-espresso hover:text-boutique-rose transition">Το Εργαστήριο</a>
+        <a href="#products" class="text-sm font-semibold text-boutique-espresso hover:text-boutique-rose transition">Προϊόντα &amp; Γεύσεις</a>
+        <a href="#b2b-channels" class="text-sm font-semibold text-boutique-espresso hover:text-boutique-rose transition">Συνεργασίες B2B</a>
+        <a href="#inquiry" class="text-sm font-semibold text-boutique-espresso hover:text-boutique-rose transition">Αίτημα Δειγμάτων</a>
+        <a href="#contact" class="text-sm font-semibold text-boutique-espresso hover:text-boutique-rose transition">Επικοινωνία</a>
+      </nav>
+
+      <!-- Right Action CTA & Phone Link -->
+      <div class="hidden sm:flex items-center gap-3">
+        <!-- Language Switcher -->
+        <div class="flex items-center bg-boutique-cream border border-boutique-border rounded-full p-1 text-[11px] font-bold">
+          <span class="px-2 py-0.5 rounded-full bg-boutique-rose-dark text-white">GR</span>
+          <span class="px-2 py-0.5 rounded-full text-boutique-muted">EN</span>
+        </div>
+
+        <!-- Phone Icon Link -->
+        <a href="tel:6984350985" aria-label="Καλέστε στο 6984 350985" class="w-10 h-10 rounded-full border border-boutique-border bg-boutique-rose-light hover:bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center transition">
+          <svg class="icon w-4 h-4 text-boutique-rose-dark" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+
+        <!-- Primary B2B Action Button -->
+        <a href="#inquiry" class="inline-flex items-center gap-2 bg-boutique-rose-dark hover:bg-boutique-rose-deep text-white text-xs font-bold uppercase tracking-wider py-2.5 px-5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 border border-boutique-champagne/40">
+          <span>Αιτημα Δειγματων B2B</span>
+          <svg class="icon w-3.5 h-3.5 text-boutique-champagne" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-boutique-rose-deep hover:bg-boutique-cream" aria-label="Άνοιγμα μενού">
+        <svg class="icon w-6 h-6" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-boutique-border bg-white px-6 py-5 space-y-4 shadow-xl">
+      <div class="flex flex-col space-y-3">
+        <a href="#home" onclick="toggleMobileMenu()" class="text-sm font-semibold text-boutique-espresso py-1.5 border-b border-boutique-cream">Αρχική</a>
+        <a href="#about" onclick="toggleMobileMenu()" class="text-sm font-semibold text-boutique-espresso py-1.5 border-b border-boutique-cream">Το Εργαστήριο</a>
+        <a href="#products" onclick="toggleMobileMenu()" class="text-sm font-semibold text-boutique-espresso py-1.5 border-b border-boutique-cream">Προϊόντα &amp; Γεύσεις</a>
+        <a href="#b2b-channels" onclick="toggleMobileMenu()" class="text-sm font-semibold text-boutique-espresso py-1.5 border-b border-boutique-cream">Συνεργασίες B2B</a>
+        <a href="#inquiry" onclick="toggleMobileMenu()" class="text-sm font-semibold text-boutique-espresso py-1.5 border-b border-boutique-cream">Αίτημα Δειγμάτων</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="text-sm font-semibold text-boutique-espresso py-1.5">Επικοινωνία</a>
+      </div>
+      <div class="pt-4 border-t border-boutique-border flex flex-col gap-3">
+        <a href="tel:6984350985" class="flex items-center justify-center gap-2 py-3 rounded-full border border-boutique-border bg-boutique-rose-light text-boutique-rose-dark font-bold text-xs">
+          <svg class="icon w-4 h-4 text-boutique-rose-dark" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Κλήση: 6984 350985</span>
+        </a>
+        <a href="#inquiry" onclick="toggleMobileMenu()" class="flex items-center justify-center py-3.5 rounded-full bg-boutique-rose-dark text-white font-bold text-xs uppercase tracking-wider">
+          <span>Αίτημα Δειγμάτων B2B</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. HERO SECTION (PASTEL BOUTIQUE SHOWCASE — B2B ONLY, NO E-SHOP)
+       ========================================================================= -->
+  <section id="home" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-[#F9F0F2] via-[#FDFBF7] to-[#FDFBF7] bg-powder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-boutique-rose-subtle border border-boutique-rose/30 text-boutique-rose-dark text-xs font-bold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-boutique-rose animate-pulse"></span>
+            <span>Επίσημο Εργαστήριο Χονδρικής • 5ο χλμ. Λάρισας - Φαλάνης</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="font-didot-title text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-boutique-rose-deep leading-[1.15]">
+            Η Αυθεντική Γοητεία του <span class="italic text-boutique-rose">Χειροποίητου Λουκουμιού</span>
+          </h1>
+
+          <!-- Body Copy -->
+          <p class="text-boutique-muted text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Στο εργαστήριο της <strong>Ευανθίας Γκέτσιου</strong> αναβιώνουμε την παραδοσιακή συνταγή με αργό σιγοβράσιμο σε χάλκινα καζάνια, αγνό ροδόνερο και πούδρα άχνης ζάχαρης. <strong>Αποκλειστικά για επαγγελματίες χονδρικής (B2B)</strong>: καφεστίαση, επιλεγμένα delicatessen, boutique ξενοδοχεία και εκδηλώσεις γάμου &amp; βάπτισης.
+          </p>
+
+          <!-- Dual Call to Actions (No E-shop / Cart) -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#inquiry" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-boutique-rose-dark hover:bg-boutique-rose-deep text-white font-bold text-sm py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-boutique-champagne/40">
+              <svg class="icon w-4 h-4 text-boutique-champagne" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>Αίτημα Δωρεάν Δειγμάτων (Sample Box)</span>
+            </a>
+            
+            <a href="#products" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-boutique-cream border-2 border-boutique-rose text-boutique-rose-deep font-bold text-sm py-4 px-8 rounded-full shadow-xs hover:shadow-md transition-all duration-300">
+              <span>Προβολή Καταλόγου Γεύσεων</span>
+              <svg class="icon w-4 h-4 text-boutique-rose" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+          </div>
+
+          <!-- B2B Feature Highlights -->
+          <div class="pt-8 border-t border-boutique-border grid grid-cols-3 gap-4 text-center lg:text-left">
+            <div>
+              <div class="font-didot-title text-2xl font-bold text-boutique-rose-dark">100%</div>
+              <div class="text-xs text-boutique-muted font-semibold mt-0.5">Χειροποίητο Καζάνι</div>
+            </div>
+            <div>
+              <div class="font-didot-title text-2xl font-bold text-boutique-rose-dark">Αγνό</div>
+              <div class="text-xs text-boutique-muted font-semibold mt-0.5">Μηδέν Συντηρητικά</div>
+            </div>
+            <div>
+              <div class="font-didot-title text-2xl font-bold text-boutique-rose-dark">B2B</div>
+              <div class="text-xs text-boutique-muted font-semibold mt-0.5">Πανελλαδική Διανομή</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual Showcase -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Glow background -->
+            <div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-boutique-rose/20 via-boutique-champagne/20 to-transparent blur-xl opacity-80"></div>
+            
+            <!-- Visual Card -->
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+              <img src="images/loukoumi_rose_bites_master.jpg" alt="Μπουκιές τριαντάφυλλο με άχνη ζάχαρη — Εργαστήριο Ευανθία Γκέτσιου" class="w-full h-[440px] object-cover hover:scale-105 transition-transform duration-700 ease-out">
+              
+              <!-- Bottom Overlaid Badge -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-xl border border-boutique-border shadow-lg flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center shrink-0">
+                    <svg class="icon w-5 h-5 text-boutique-rose" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-boutique-rose-deep">Σειρά HoReCa &amp; Εκδηλώσεων</div>
+                    <div class="text-[11px] text-boutique-muted">Μπουκίτσες καφεστίασης 5kg/10kg &amp; Μπομπονιέρες</div>
+                  </div>
+                </div>
+                <a href="#inquiry" class="text-xs font-bold text-boutique-rose hover:underline">Δείγματα →</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. THE ARTISANAL WORKSHOP & STORYTELLING
+       ========================================================================= -->
+  <section id="about" class="py-20 lg:py-28 bg-white border-y border-boutique-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Imagery -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-boutique-cream">
+            <img src="images/workshop_production_master.jpg" alt="Το αυθεντικό εργαστήριο λουκουμιών στο 5ο χλμ. Λάρισας - Φαλάνης" class="w-full h-[460px] object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-boutique-rose-deep/70 via-transparent to-transparent flex items-end p-6">
+              <span class="text-white text-xs font-semibold bg-boutique-rose-dark/90 px-3.5 py-1.5 rounded-full border border-boutique-champagne/40">
+                Παραδοσιακή Παραγωγή • 5ο χλμ. Λάρισας - Φαλάνης
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Story & Quality Pillars -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="inline-flex items-center gap-2 text-boutique-rose font-bold text-xs uppercase tracking-widest">
+            <svg class="icon w-4 h-4" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <span>Η Φιλοσοφια &amp; Η Παραδοση</span>
+          </div>
+
+          <h2 class="font-didot-title text-3xl sm:text-4xl lg:text-5xl font-bold text-boutique-rose-deep leading-tight">
+            Η Τέχνη του Λουκουμιού με την Υπογραφή της <span class="italic text-boutique-rose">κυρίας Ευανθίας</span>
+          </h2>
+
+          <p class="text-boutique-muted text-base leading-relaxed">
+            Στο <strong>5ο χλμ. Λάρισας - Φαλάνης</strong>, το εργαστήριο της <strong>Ευανθίας Γκέτσιου</strong> μένει πιστό στην αληθινή παραδοσιακή συνταγή. Εδώ, κάθε παρτίδα λουκουμιού παρασκευάζεται σε παραδοσιακά χάλκινα καζάνια, με αργό βρασμό και συνεχή χειρωνακτική φροντίδα μέχρι το μείγμα να αποκτήσει τη χαρακτηριστική βελούδινη υφή που λιώνει αρμονικά στον ουρανίσκο.
+          </p>
+
+          <p class="text-boutique-muted text-base leading-relaxed">
+            Δεν χρησιμοποιούμε βιομηχανικά πρόσθετα, τεχνητές χρωστικές ή συντηρητικά. Επιλέγουμε μόνο <strong>αγνό φυσικό ροδόνερο, πιστοποιημένη μαστίχα Χίου, φυσικό εκχύλισμα περγαμόντου</strong> και ντόπιους επιλεγμένους ξηρούς καρπούς της Θεσσαλίας.
+          </p>
+
+          <!-- 4 Pillars Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3">
+            
+            <div class="p-4 rounded-xl bg-boutique-sugar border border-boutique-border flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-full bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center shrink-0">
+                <svg class="icon w-5 h-5 text-boutique-rose" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-sm text-boutique-rose-deep">Αργός Σιγοβρασμός</h3>
+                <p class="text-xs text-boutique-muted mt-1">Υπομονετική χειρωνακτική ανάδευση για τέλεια ελαστικότητα και βελούδινη αίσθηση.</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-boutique-sugar border border-boutique-border flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-full bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center shrink-0">
+                <svg class="icon w-5 h-5 text-boutique-rose" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-sm text-boutique-rose-deep">Αγνές Πρώτες Ύλες</h3>
+                <p class="text-xs text-boutique-muted mt-1">Μόνο φυσικά εκχυλίσματα, ελληνικό μέλι, νισεστέ ανώτερης ποιότητας και φρέσκοι καρποί.</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-boutique-sugar border border-boutique-border flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-full bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center shrink-0">
+                <svg class="icon w-5 h-5 text-boutique-rose" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-sm text-boutique-rose-deep">Σταθερή Κοπή HoReCa</h3>
+                <p class="text-xs text-boutique-muted mt-1">Μπουκίτσες ιδανικού μεγέθους για κομψό σερβίρισμα δίπλα στο φλιτζάνι του καφέ.</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-boutique-sugar border border-boutique-border flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-full bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center shrink-0">
+                <svg class="icon w-5 h-5 text-boutique-rose" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-sm text-boutique-rose-deep">Επαγγελματικές Συσκευασίες</h3>
+                <p class="text-xs text-boutique-muted mt-1">Κιβώτια 5kg &amp; 10kg με ειδική προστασία υγρασίας για άψογη διατήρηση της άχνης.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. B2B PRODUCT CATALOGUE (SHOWCASE ONLY — NO CART / E-SHOP)
+       ========================================================================= -->
+  <section id="products" class="py-20 lg:py-28 bg-boutique-cream bg-powder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title -->
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+        <div class="inline-flex items-center gap-2 text-boutique-rose-dark font-bold text-xs uppercase tracking-widest bg-boutique-rose-light px-3.5 py-1 rounded-full border border-boutique-rose/20">
+          <span>Εκλεκτος Καταλογος Χονδρικης</span>
+        </div>
+        <h2 class="font-didot-title text-3xl sm:text-4xl lg:text-5xl font-bold text-boutique-rose-deep">
+          Γεύσεις &amp; Προϊοντικές Σειρές Εργαστηρίου
+        </h2>
+        <p class="text-boutique-muted text-base leading-relaxed">
+          Κάντε κλικ σε οποιοδήποτε είδος για να δείτε τα συστατικά, τα μεγέθη συσκευασίας χονδρικής και τις τεχνικές προδιαγραφές.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center justify-center flex-wrap gap-2.5 mb-12">
+        <button onclick="filterCategory('all', this)" class="cat-filter-btn active px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-boutique-rose-dark text-white shadow-sm border border-boutique-rose-dark">
+          Όλες οι Γεύσεις
+        </button>
+        <button onclick="filterCategory('horeca', this)" class="cat-filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-boutique-rose-deep border border-boutique-border hover:border-boutique-rose">
+          Μπουκίτσες Καφεστίασης B2B
+        </button>
+        <button onclick="filterCategory('classic', this)" class="cat-filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-boutique-rose-deep border border-boutique-border hover:border-boutique-rose">
+          Παραδοσιακά Λουκούμια
+        </button>
+        <button onclick="filterCategory('nuts', this)" class="cat-filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-boutique-rose-deep border border-boutique-border hover:border-boutique-rose">
+          Specialty με Καρπούς
+        </button>
+        <button onclick="filterCategory('events', this)" class="cat-filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-boutique-rose-deep border border-boutique-border hover:border-boutique-rose">
+          Γλυκά Κουταλιού &amp; Εκδηλώσεις
+        </button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="productsCatalog">
+
+        <!-- PRODUCT 1 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden border border-boutique-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" 
+             data-cat="horeca" 
+             onclick="openProductModal('Μπουκίτσες Ελληνικού Καφέ (HoReCa)', 'Ειδική σειρά για καφεστίαση & παραδοσιακά καφενεία', 'Τριαντάφυλλο, Μαστίχα ή Ανάμεικτο', 'Κιβώτιο 5kg & 10kg (περίπου 120-140 τεμάχια ανά κιλό)', '12 Μήνες σε ξηρό & δροσερό περιβάλλον', 'images/loukoumi_rose_bites_master.jpg')">
+          <div class="h-52 overflow-hidden relative">
+            <img src="images/loukoumi_rose_bites_master.jpg" alt="Μπουκίτσες Ελληνικού Καφέ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-boutique-rose-dark text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs border border-boutique-champagne/40">B2B Top Seller</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow">
+            <span class="text-[10px] font-bold text-boutique-champagne uppercase tracking-wider">Καφεστιαση &amp; HoReCa</span>
+            <h3 class="font-didot-title text-xl font-bold text-boutique-rose-deep mt-1">Μπουκίτσες Ελληνικού Καφέ</h3>
+            <p class="text-boutique-muted text-xs leading-relaxed mt-2 flex-grow">
+              Σταθερή μικρή κοπή, ιδανική για συνοδευτικό στο πιατάκι του ελληνικού καφέ. Διατηρείται αφράτο χωρίς να νοτίζει η άχνη.
+            </p>
+            <div class="pt-4 border-t border-boutique-border/60 mt-4 flex items-center justify-between text-xs">
+              <span class="text-boutique-muted font-medium">Κιβώτιο 5kg &amp; 10kg</span>
+              <span class="font-bold text-boutique-rose-dark group-hover:text-boutique-champagne flex items-center gap-1">
+                <span>Λεπτομέρειες</span>
+                <svg class="icon w-3 h-3" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 2 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden border border-boutique-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" 
+             data-cat="classic" 
+             onclick="openProductModal('Λουκούμι Τριαντάφυλλο Αρχοντικό', 'Η κλασική εμβληματική συνταγή με φυσικό ροδόνερο', 'Ροδόνερο, ζάχαρη, νισεστέ, άχνη ζάχαρη', '250g, 500g, 1kg & Χύμα σε κιβώτιο', '12 Μήνες', 'images/loukoumi_classic_cup_master.jpg')">
+          <div class="h-52 overflow-hidden relative">
+            <img src="images/loukoumi_classic_cup_master.jpg" alt="Λουκούμι Τριαντάφυλλο" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-boutique-rose-deep text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs">Κλασικό Άρωμα</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow">
+            <span class="text-[10px] font-bold text-boutique-champagne uppercase tracking-wider">Παραδοσιακο Λουκουμι</span>
+            <h3 class="font-didot-title text-xl font-bold text-boutique-rose-deep mt-1">Λουκούμι Τριαντάφυλλο</h3>
+            <p class="text-boutique-muted text-xs leading-relaxed mt-2 flex-grow">
+              Αυθεντικό ελληνικό ροδόνερο με απαλό άρωμα και διακριτική ροζ απόχρωση. Πασπαλισμένο με λεπτοαλεσμένη άχνη ζάχαρη.
+            </p>
+            <div class="pt-4 border-t border-boutique-border/60 mt-4 flex items-center justify-between text-xs">
+              <span class="text-boutique-muted font-medium">Συσκευασίες &amp; Χύμα</span>
+              <span class="font-bold text-boutique-rose-dark group-hover:text-boutique-champagne flex items-center gap-1">
+                <span>Λεπτομέρειες</span>
+                <svg class="icon w-3 h-3" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 3 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden border border-boutique-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" 
+             data-cat="classic" 
+             onclick="openProductModal('Χειροποίητος Χαλβάς με Καρπούς & Σοκολάτα', 'Παραδοσιακός χειροποίητος χαλβάς με ταχίνι, εκλεκτούς καρπούς, κράνμπερι και σοκολατένιο μάρμαρο', 'Ταχίνι σουσαμιού, ζάχαρη, κακάο, αμύγδαλα, κράνμπερι', 'Κομμάτια 1kg, 2kg & Μπλοκ χονδρικής', '8 Μήνες', 'images/halva_artisan_master.jpg')">
+          <div class="h-52 overflow-hidden relative">
+            <img src="images/halva_artisan_master.jpg" alt="Χειροποίητος Χαλβάς Εργαστηρίου" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-boutique-espresso text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs">Αυθεντική Μαστίχα</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow">
+            <span class="text-[10px] font-bold text-boutique-champagne uppercase tracking-wider">Χειροποιητος Χαλβας</span>
+            <h3 class="font-didot-title text-xl font-bold text-boutique-rose-deep mt-1">Χαλβάς με Καρπούς &amp; Σοκολάτα</h3>
+            <p class="text-boutique-muted text-xs leading-relaxed mt-2 flex-grow">
+              Παραδοσιακός σουσαμένιος χαλβάς με ολόκληρους ξηρούς καρπούς, κράνμπερι και πλούσιο σοκολατένιο στροβιλισμό. Αυθεντική συνταγή εργαστηρίου.
+            </p>
+            <div class="pt-4 border-t border-boutique-border/60 mt-4 flex items-center justify-between text-xs">
+              <span class="text-boutique-muted font-medium">Συσκευασίες &amp; Χύμα</span>
+              <span class="font-bold text-boutique-rose-dark group-hover:text-boutique-champagne flex items-center gap-1">
+                <span>Λεπτομέρειες</span>
+                <svg class="icon w-3 h-3" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 4 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden border border-boutique-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" 
+             data-cat="nuts" 
+             onclick="openProductModal('Φρεσκοκομμένα Λουκούμια Εργαστηρίου', 'Αυθεντική παραγωγή ημέρας από το καζάνι με πλούσια άχνη και ανάμεικτες γεύσεις', 'Αγνό ροδόνερο, μαστίχα, πορτοκάλι, ζάχαρη, νισεστέ', 'Κιβώτια 5kg & 10kg για χονδρική', '12 Μήνες', 'images/workshop_production_master.jpg')">
+          <div class="h-52 overflow-hidden relative">
+            <img src="images/workshop_production_master.jpg" alt="Φρεσκοκομμένα Λουκούμια Εργαστηρίου" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-amber-800 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs">Specialty Καρποί</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow">
+            <span class="text-[10px] font-bold text-boutique-champagne uppercase tracking-wider">Παραγωγη Εργαστηριου</span>
+            <h3 class="font-didot-title text-xl font-bold text-boutique-rose-deep mt-1">Φρεσκοκομμένα Λουκούμια</h3>
+            <p class="text-boutique-muted text-xs leading-relaxed mt-2 flex-grow">
+              Φρέσκια κοπή ημέρας σε ροζ, πορτοκάλι και παραδοσιακά αρώματα, πασπαλισμένα με λεπτή άχνη. Απευθείας από το καζάνι της κας Ευανθίας.
+            </p>
+            <div class="pt-4 border-t border-boutique-border/60 mt-4 flex items-center justify-between text-xs">
+              <span class="text-boutique-muted font-medium">Συσκευασίες &amp; Χύμα</span>
+              <span class="font-bold text-boutique-rose-dark group-hover:text-boutique-champagne flex items-center gap-1">
+                <span>Λεπτομέρειες</span>
+                <svg class="icon w-3 h-3" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 5 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden border border-boutique-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" 
+             data-cat="classic" 
+             onclick="openProductModal('Λουκούμι Περγαμόντο', 'Δροσερό εκχύλισμα ξύσματος περγαμόντου', 'Φυσικό εκχύλισμα περγαμόντου, ζάχαρη, νισεστέ', '250g, 500g, 1kg & Χύμα', '12 Μήνες', 'https://images.unsplash.com/photo-1555148484-324aae683a86?auto=format&fit=crop&w=800&q=80')">
+          <div class="h-52 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1555148484-324aae683a86?auto=format&fit=crop&w=800&q=80" alt="Λουκούμι Περγαμόντο" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-emerald-800 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs">Εσπεριδοειδή</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow">
+            <span class="text-[10px] font-bold text-boutique-champagne uppercase tracking-wider">Παραδοσιακο Λουκουμι</span>
+            <h3 class="font-didot-title text-xl font-bold text-boutique-rose-deep mt-1">Λουκούμι Περγαμόντο</h3>
+            <p class="text-boutique-muted text-xs leading-relaxed mt-2 flex-grow">
+              Έντονο άρωμα εσπεριδοειδών με δροσερή οξύτητα. Ένα εξαιρετικό χωνευτικό κέρασμα μετά από γεύμα σε εστιατόρια και ταβέρνες.
+            </p>
+            <div class="pt-4 border-t border-boutique-border/60 mt-4 flex items-center justify-between text-xs">
+              <span class="text-boutique-muted font-medium">Συσκευασίες &amp; Χύμα</span>
+              <span class="font-bold text-boutique-rose-dark group-hover:text-boutique-champagne flex items-center gap-1">
+                <span>Λεπτομέρειες</span>
+                <svg class="icon w-3 h-3" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 6 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden border border-boutique-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" 
+             data-cat="horeca" 
+             onclick="openProductModal('Μπουκίτσες με Τριμμένη Καρύδα', 'Επικάλυψη φυσικής τριμμένης ινδικής καρύδας', 'Ινδική καρύδα, ζάχαρη, νισεστέ, φυσικά αρώματα', 'Κιβώτιο 5kg & 10kg', '10 Μήνες', 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=800&q=80')">
+          <div class="h-52 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=800&q=80" alt="Μπουκίτσες με Τριμμένη Καρύδα" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-amber-700 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs">Τροπικό</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow">
+            <span class="text-[10px] font-bold text-boutique-champagne uppercase tracking-wider">Ειδικη Σειρα</span>
+            <h3 class="font-didot-title text-xl font-bold text-boutique-rose-deep mt-1">Μπουκίτσες με Καρύδα</h3>
+            <p class="text-boutique-muted text-xs leading-relaxed mt-2 flex-grow">
+              Αφράτο λουκούμι τυλιγμένο σε φρεσκοτριμμένη καρύδα αντί για άχνη. Μοναδική υφή και εξωτική γεύση που λατρεύουν οι πελάτες.
+            </p>
+            <div class="pt-4 border-t border-boutique-border/60 mt-4 flex items-center justify-between text-xs">
+              <span class="text-boutique-muted font-medium">Κιβώτιο 5kg &amp; 10kg</span>
+              <span class="font-bold text-boutique-rose-dark group-hover:text-boutique-champagne flex items-center gap-1">
+                <span>Λεπτομέρειες</span>
+                <svg class="icon w-3 h-3" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 7 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden border border-boutique-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" 
+             data-cat="events" 
+             onclick="openProductModal('Γλυκά του Κουταλιού Βύσσινο & Κυδώνι', 'Παραδοσιακά σπιτικά γλυκά κουταλιού σε διαυγές σιρόπι', 'Φρέσκα φρούτα εποχής, ζάχαρη, χυμός λεμονιού', 'Βάζα 450g, 900g & Επαγγελματικό δοχείο 5kg', '18 Μήνες', 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80')">
+          <div class="h-52 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Γλυκά του Κουταλιού" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-red-900 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs">Σπιτική Συνταγή</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow">
+            <span class="text-[10px] font-bold text-boutique-champagne uppercase tracking-wider">Παραδοσιακα Εδεσματα</span>
+            <h3 class="font-didot-title text-xl font-bold text-boutique-rose-deep mt-1">Γλυκά του Κουταλιού</h3>
+            <p class="text-boutique-muted text-xs leading-relaxed mt-2 flex-grow">
+              Βύσσινο, κυδώνι, περγαμόντο και σύκο δεμένα σε διαυγές σιρόπι. Ιδανικό για σερβίρισμα με ελληνικό γιαούρτι ή παγωτό σε εστιατόρια.
+            </p>
+            <div class="pt-4 border-t border-boutique-border/60 mt-4 flex items-center justify-between text-xs">
+              <span class="text-boutique-muted font-medium">Βάζα &amp; Δοχεία 5kg</span>
+              <span class="font-bold text-boutique-rose-dark group-hover:text-boutique-champagne flex items-center gap-1">
+                <span>Λεπτομέρειες</span>
+                <svg class="icon w-3 h-3" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 8 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden border border-boutique-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" 
+             data-cat="events" 
+             onclick="openProductModal('Μπομπονιέρες & Κεράσματα Εκδηλώσεων', 'Custom πακέτα χονδρικής για γάμους, βαπτίσεις & δεξιώσεις', 'Επιλογή γεύσεων, ατομικό περιτύλιγμα ή πολυτελές κουτάκι', 'Χονδρική ανά 100+ τεμάχια', '12 Μήνες', 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80')">
+          <div class="h-52 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80" alt="Κεράσματα για Γάμους και Εκδηλώσεις" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-boutique-champagne text-boutique-rose-deep text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs">Custom Orders</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow">
+            <span class="text-[10px] font-bold text-boutique-champagne uppercase tracking-wider">Γαμος &amp; Βαπτιση</span>
+            <h3 class="font-didot-title text-xl font-bold text-boutique-rose-deep mt-1">Μπομπονιέρες &amp; Κεράσματα</h3>
+            <p class="text-boutique-muted text-xs leading-relaxed mt-2 flex-grow">
+              Ατομικά συσκευασμένες μπουκίτσες ή ειδικά κουτάκια για εκδηλώσεις, συλλόγους και γάμους με δυνατότητα προσωποποίησης.
+            </p>
+            <div class="pt-4 border-t border-boutique-border/60 mt-4 flex items-center justify-between text-xs">
+              <span class="text-boutique-muted font-medium">Κατόπιν Παραγγελίας</span>
+              <span class="font-bold text-boutique-rose-dark group-hover:text-boutique-champagne flex items-center gap-1">
+                <span>Λεπτομέρειες</span>
+                <svg class="icon w-3 h-3" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. B2B CHANNELS & VALUE PROPOSITION
+       ========================================================================= -->
+  <section id="b2b-channels" class="py-20 lg:py-28 bg-white border-y border-boutique-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div class="inline-flex items-center gap-2 text-boutique-champagne font-bold text-xs uppercase tracking-widest">
+          <svg class="icon w-4 h-4" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <span>Επαγγελματικα Καναλια Συνεργασιας</span>
+        </div>
+        <h2 class="font-didot-title text-3xl sm:text-4xl lg:text-5xl font-bold text-boutique-rose-deep">
+          Σε Ποιους Επαγγελματίες Απευθυνόμαστε
+        </h2>
+        <p class="text-boutique-muted text-base leading-relaxed">
+          Χτίζουμε σταθερές συνεργασίες με επιχειρήσεις που επιλέγουν την απαράμιλλη ποιότητα του αυθεντικού παραδοσιακού λουκουμιού.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- CHANNEL 1 -->
+        <div class="bg-boutique-sugar rounded-2xl p-7 border border-boutique-border hover:border-boutique-rose transition-all duration-300 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center">
+              <svg class="icon w-6 h-6 text-boutique-rose" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <h3 class="font-didot-title text-xl font-bold text-boutique-rose-deep">Καφεστίαση &amp; Καφενεία</h3>
+            <p class="text-xs text-boutique-muted leading-relaxed">
+              Μπουκίτσες σταθερού μεγέθους για τέλειο συνοδευτικό στον ελληνικό καφέ. Σταθερή κοπή, πλούσια άχνη που δεν υγροποιείται, εξαιρετικό cost-per-serving.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-boutique-border/60">
+            <span class="text-[11px] font-bold text-boutique-champagne uppercase tracking-wider">Κιβώτια 5kg &amp; 10kg</span>
+          </div>
+        </div>
+
+        <!-- CHANNEL 2 -->
+        <div class="bg-boutique-sugar rounded-2xl p-7 border border-boutique-border hover:border-boutique-rose transition-all duration-300 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center">
+              <svg class="icon w-6 h-6 text-boutique-rose" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </div>
+            <h3 class="font-didot-title text-xl font-bold text-boutique-rose-deep">Delicatessen &amp; Παντοπωλεία</h3>
+            <p class="text-xs text-boutique-muted leading-relaxed">
+              Εκλεκτές επώνυμες συσκευασίες (250g, 500g, 1kg) για ράφια παραδοσιακών προϊόντων. Αυθεντική γεύση που δημιουργεί επαναλαμβανόμενες πωλήσεις.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-boutique-border/60">
+            <span class="text-[11px] font-bold text-boutique-champagne uppercase tracking-wider">Premium Ράφι</span>
+          </div>
+        </div>
+
+        <!-- CHANNEL 3 -->
+        <div class="bg-boutique-sugar rounded-2xl p-7 border border-boutique-border hover:border-boutique-rose transition-all duration-300 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center">
+              <svg class="icon w-6 h-6 text-boutique-rose" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="font-didot-title text-xl font-bold text-boutique-rose-deep">Ξενοδοχεία &amp; Φιλοξενία</h3>
+            <p class="text-xs text-boutique-muted leading-relaxed">
+              Welcome treats στα δωμάτια, παραδοσιακό κέρασμα στη reception και παρουσίαση στον ελληνικό πρωινό μπουφέ. Έμφαση στην τοπική θεσσαλική γαστρονομία.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-boutique-border/60">
+            <span class="text-[11px] font-bold text-boutique-champagne uppercase tracking-wider">Boutique Hospitality</span>
+          </div>
+        </div>
+
+        <!-- CHANNEL 4 -->
+        <div class="bg-boutique-sugar rounded-2xl p-7 border border-boutique-border hover:border-boutique-rose transition-all duration-300 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center">
+              <svg class="icon w-6 h-6 text-boutique-rose" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 class="font-didot-title text-xl font-bold text-boutique-rose-deep">Γάμοι, Βαπτίσεις &amp; Catering</h3>
+            <p class="text-xs text-boutique-muted leading-relaxed">
+              Ειδικές παραγγελίες χονδρικής για μπομπονιέρες, κουτάκια κεράσματος και candy bars εκδηλώσεων. Ατομικό περιτύλιγμα με προστασία ποιότητας.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-boutique-border/60">
+            <span class="text-[11px] font-bold text-boutique-champagne uppercase tracking-wider">Custom Εκδηλώσεις</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. B2B SAMPLE REQUEST & INQUIRY FORM (WHOLESALE ONLY)
+       ========================================================================= -->
+  <section id="inquiry" class="py-20 lg:py-28 bg-boutique-rose-deep text-white relative overflow-hidden">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 opacity-10 bg-powder pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Sample Box Pitch -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-boutique-champagne/20 border border-boutique-champagne/40 text-boutique-champagne text-xs font-bold uppercase tracking-wider">
+            <svg class="icon w-4 h-4" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>Δωρεαν Δειγματα Γευσιγνωσιας</span>
+          </div>
+
+          <h2 class="font-didot-title text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            Δοκιμάστε τη Διαφορά στην Επιχείρησή σας
+          </h2>
+
+          <p class="text-rose-100/90 text-base leading-relaxed font-normal">
+            Αποστέλλουμε <strong>δωρεάν πακέτο δειγμάτων (Sample Box)</strong> σε επαγγελματίες εστίασης, καφενεία, ζαχαροπλαστεία, ξενοδοχεία και καταστήματα delicatessen. Δοκιμάστε την υφή, το άρωμα και την ποιότητα των λουκουμιών μας πριν κάνετε την παραγγελία σας.
+          </p>
+
+          <div class="space-y-3 pt-2 text-sm text-rose-100">
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 rounded-full bg-boutique-champagne/20 border border-boutique-champagne text-boutique-champagne flex items-center justify-center shrink-0">
+                <svg class="icon w-3.5 h-3.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span><strong>Πλήρης ποικιλία:</strong> Δείγματα από Τριαντάφυλλο, Μαστίχα, Καρύδι και Μπουκίτσες Καφενείου.</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 rounded-full bg-boutique-champagne/20 border border-boutique-champagne text-boutique-champagne flex items-center justify-center shrink-0">
+                <svg class="icon w-3.5 h-3.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span><strong>Επίσημος Τιμοκατάλογος B2B:</strong> Κλίμακα τιμών χονδρικής ανά ποσότητα κιβωτίων.</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 rounded-full bg-boutique-champagne/20 border border-boutique-champagne text-boutique-champagne flex items-center justify-center shrink-0">
+                <svg class="icon w-3.5 h-3.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span><strong>Άμεση τηλεφωνική υποστήριξη:</strong> Απευθείας επικοινωνία με την υπεύθυνη του εργαστηρίου.</span>
+            </div>
+          </div>
+
+          <!-- Direct Phone Call Box -->
+          <div class="pt-4 p-5 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-between">
+            <div>
+              <div class="text-xs text-boutique-champagne font-bold uppercase tracking-wider">Άμεση Τηλεφωνική Παραγγελία</div>
+              <div class="text-lg font-bold text-white mt-0.5">6984 350985</div>
+            </div>
+            <a href="tel:6984350985" class="btn btn-sm bg-boutique-champagne hover:bg-amber-300 text-boutique-rose-deep font-bold border-none rounded-full px-5">
+              Κλήση Τώρα
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Inquiry Form -->
+        <div class="lg:col-span-6 bg-white text-boutique-espresso p-8 sm:p-10 rounded-3xl shadow-2xl border-4 border-white">
+          
+          <h3 class="font-didot-title text-2xl font-bold text-boutique-rose-deep mb-1">Αίτημα Χονδρικής &amp; Δειγμάτων</h3>
+          <p class="text-xs text-boutique-muted mb-6">Συμπληρώστε τα στοιχεία σας και θα επικοινωνήσουμε άμεσα μαζί σας για την αποστολή του πακέτου.</p>
+
+          <form onsubmit="handleInquirySubmit(event)" class="space-y-4">
+            
+            <div>
+              <label class="block text-xs font-bold text-boutique-rose-deep uppercase tracking-wider mb-1">Επωνυμία Επιχείρησης / Ονοματεπώνυμο *</label>
+              <input type="text" required placeholder="π.χ. Παραδοσιακό Καφενείο / Γεώργιος Νικολάου" class="w-full text-xs px-3.5 py-3 rounded-xl border border-boutique-border bg-boutique-sugar text-boutique-rose-deep focus:outline-none focus:ring-2 focus:ring-boutique-rose">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-boutique-rose-deep uppercase tracking-wider mb-1">Κινητό Τηλέφωνο *</label>
+                <input type="tel" required placeholder="π.χ. 6984 350985" class="w-full text-xs px-3.5 py-3 rounded-xl border border-boutique-border bg-boutique-sugar text-boutique-rose-deep focus:outline-none focus:ring-2 focus:ring-boutique-rose">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-boutique-rose-deep uppercase tracking-wider mb-1">Email</label>
+                <input type="email" placeholder="contact@business.gr" class="w-full text-xs px-3.5 py-3 rounded-xl border border-boutique-border bg-boutique-sugar text-boutique-rose-deep focus:outline-none focus:ring-2 focus:ring-boutique-rose">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-boutique-rose-deep uppercase tracking-wider mb-1">Δραστηριότητα</label>
+                <select class="w-full text-xs px-3 py-3 rounded-xl border border-boutique-border bg-boutique-sugar text-boutique-rose-deep focus:outline-none focus:ring-2 focus:ring-boutique-rose">
+                  <option>Καφεστίαση / Καφενείο</option>
+                  <option>Delicatessen / Παντοπωλείο</option>
+                  <option>Ζαχαροπλαστείο</option>
+                  <option>Ξενοδοχείο / Κατάλυμα</option>
+                  <option>Γάμος / Βάπτιση / Catering</option>
+                  <option>Άλλο</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-boutique-rose-deep uppercase tracking-wider mb-1">Περιοχή / Πόλη *</label>
+                <input type="text" required placeholder="π.χ. Λάρισα, Βόλος, Αθήνα..." class="w-full text-xs px-3.5 py-3 rounded-xl border border-boutique-border bg-boutique-sugar text-boutique-rose-deep focus:outline-none focus:ring-2 focus:ring-boutique-rose">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-boutique-rose-deep uppercase tracking-wider mb-1">Επιθυμητή Ενέργεια</label>
+              <select class="w-full text-xs px-3 py-3 rounded-xl border border-boutique-border bg-boutique-sugar text-boutique-rose-deep focus:outline-none focus:ring-2 focus:ring-boutique-rose">
+                <option>Αποστολή Δωρεάν Δειγμάτων Γευσιγνωσίας (Sample Box)</option>
+                <option>Αποστολή Τιμοκαταλόγου Χονδρικής B2B</option>
+                <option>Τηλεφωνική Επικοινωνία για Ειδική Παραγγελία</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-boutique-rose-deep uppercase tracking-wider mb-1">Σημειώσεις / Προτιμήσεις Γεύσεων</label>
+              <textarea rows="2" placeholder="Αναφέρετε αν σας ενδιαφέρουν μπουκίτσες καφέ, συγκεκριμένες γεύσεις ή ποσότητες..." class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-boutique-border bg-boutique-sugar text-boutique-rose-deep focus:outline-none focus:ring-2 focus:ring-boutique-rose"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl bg-boutique-rose-dark hover:bg-boutique-rose-deep text-white font-bold text-xs uppercase tracking-wider transition shadow-lg border border-boutique-champagne/30">
+              Αποστολη Αιτηματος Χονδρικης
+            </button>
+
+            <!-- Success notification -->
+            <div id="inquirySuccess" class="hidden text-center text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-300 py-3 px-4 rounded-xl">
+              ✓ Το αίτημά σας καταχωρήθηκε με επιτυχία! Θα επικοινωνήσουμε τηλεφωνικά μαζί σας για την αποστολή των δειγμάτων.
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. WORKSHOP LOCATION, MAP & CONTACT DETAILS
+       ========================================================================= -->
+  <section id="contact" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Full Contact Data -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 text-boutique-rose font-bold text-xs uppercase tracking-widest">
+            <svg class="icon w-4 h-4" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Επισκεψη &amp; Επικοινωνια</span>
+          </div>
+
+          <h2 class="font-didot-title text-3xl sm:text-4xl font-bold text-boutique-rose-deep leading-tight">
+            Ελάτε στο Εργαστήριό μας στη Λάρισα
+          </h2>
+
+          <p class="text-boutique-muted text-sm leading-relaxed">
+            Το εργαστήριό μας είναι εύκολα προσβάσιμο, με άνετο χώρο φόρτωσης για επαγγελματικά οχήματα. Είμαστε στη διάθεσή σας για παραλαβές παραγγελιών ή δειγματισμό.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            
+            <!-- Address card -->
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-boutique-sugar border border-boutique-border">
+              <div class="w-10 h-10 rounded-full bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center shrink-0">
+                <svg class="icon w-5 h-5 text-boutique-rose" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-boutique-muted uppercase tracking-wider">Διεύθυνση Εργαστηρίου</div>
+                <div class="text-sm font-bold text-boutique-rose-deep mt-0.5">5ο χλμ. Λάρισας - Φαλάνης, Λάρισα</div>
+                <div class="text-xs text-boutique-muted mt-0.5">Τ.Κ. 41500, Θεσσαλία (Άνετο πάρκινγκ &amp; χώρος φορτοεκφόρτωσης)</div>
+              </div>
+            </div>
+
+            <!-- Phone card -->
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-boutique-sugar border border-boutique-border">
+              <div class="w-10 h-10 rounded-full bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center shrink-0">
+                <svg class="icon w-5 h-5 text-boutique-rose" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-boutique-muted uppercase tracking-wider">Τηλέφωνο Επικοινωνίας &amp; Παραγγελιών</div>
+                <a href="tel:6984350985" class="text-base font-bold text-boutique-rose-dark hover:text-boutique-rose block mt-0.5">6984 350985</a>
+                <div class="text-xs text-boutique-muted mt-0.5">Υπεύθυνη: κυρία Ευανθία Γκέτσιου</div>
+              </div>
+            </div>
+
+            <!-- Email card -->
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-boutique-sugar border border-boutique-border">
+              <div class="w-10 h-10 rounded-full bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center shrink-0">
+                <svg class="icon w-5 h-5 text-boutique-rose" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-boutique-muted uppercase tracking-wider">Ηλεκτρονικό Ταχυδρομείο (B2B)</div>
+                <a href="mailto:euanthiagetsiou2000@gmail.com" class="text-sm font-bold text-boutique-rose-deep hover:text-boutique-rose-dark block mt-0.5">euanthiagetsiou2000@gmail.com</a>
+                <div class="text-xs text-boutique-muted mt-0.5">Για αποστολή προσφορών, τιμοκαταλόγων και παραστατικών</div>
+              </div>
+            </div>
+
+            <!-- Operating Hours card -->
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-boutique-sugar border border-boutique-border">
+              <div class="w-10 h-10 rounded-full bg-boutique-rose-subtle text-boutique-rose-dark flex items-center justify-center shrink-0">
+                <svg class="icon w-5 h-5 text-boutique-rose" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-boutique-muted uppercase tracking-wider">Ωράριο Παραγωγής &amp; Διανομής</div>
+                <div class="text-sm font-bold text-boutique-rose-deep mt-0.5">Δευτέρα – Σάββατο: 08:00 – 20:00</div>
+                <div class="text-xs text-boutique-muted mt-0.5">Κυριακή: Κατόπιν συνεννόησης για έκτακτες παραδόσεις</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right: Location Visual & Google Maps directions -->
+        <div class="lg:col-span-6">
+          <div class="rounded-3xl overflow-hidden border-2 border-boutique-border bg-boutique-sugar p-8 text-center space-y-6 shadow-sm">
+            <div class="w-16 h-16 mx-auto rounded-full bg-boutique-rose-dark text-boutique-champagne flex items-center justify-center">
+              <svg class="icon w-8 h-8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            
+            <div>
+              <span class="text-xs font-bold text-boutique-champagne uppercase tracking-widest">Σημειο Παραγωγης</span>
+              <h3 class="font-didot-title text-2xl font-bold text-boutique-rose-deep mt-1">5ο χλμ. Λάρισας - Φαλάνης</h3>
+              <p class="text-xs text-boutique-muted max-w-sm mx-auto mt-2 leading-relaxed">
+                Το εργαστήριο βρίσκεται επάνω στον επαρχιακό οδικό άξονα Λάρισας - Φαλάνης, μόλις 7 λεπτά από τον κόμβο της Λάρισας.
+              </p>
+            </div>
+
+            <!-- Route buttons -->
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a href="https://maps.google.com/?q=5o+chlm+Larisa+Falani" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-boutique-rose-dark hover:bg-boutique-rose-deep text-white font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-full shadow-md transition">
+                <svg class="icon w-4 h-4 text-boutique-champagne" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                <span>Οδηγίες Google Maps</span>
+              </a>
+              <a href="tel:6984350985" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-boutique-border bg-white hover:bg-boutique-cream text-boutique-rose-deep font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-full transition">
+                <svg class="icon w-4 h-4 text-boutique-rose" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>6984 350985</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. STRUCTURED 4-COLUMN FOOTER
+       ========================================================================= -->
+  <footer class="bg-boutique-rose-deep text-rose-100/80 pt-16 pb-8 border-t-4 border-boutique-champagne">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- 4 Columns Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Col 1: Brand & Identity -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-boutique-rose-dark flex items-center justify-center text-boutique-champagne border border-boutique-champagne">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-didot-title text-xl font-bold text-white leading-tight">Ευανθία Γκέτσιου</span>
+              <span class="text-[9px] uppercase tracking-widest text-boutique-champagne">Παραδοσιακο Εργαστηριο</span>
+            </div>
+          </div>
+          
+          <p class="text-xs text-rose-200/70 leading-relaxed font-normal">
+            Χειροποίητα παραδοσιακά λουκούμια και γλυκίσματα. Αποκλειστικά χονδρική πώληση (B2B) σε καφεστίαση, delicatessen, ξενοδοχεία και εκδηλώσεις.
+          </p>
+
+          <!-- Social media with clean SVG icons -->
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="w-8 h-8 rounded-full bg-white/10 hover:bg-boutique-champagne hover:text-boutique-rose-deep text-white flex items-center justify-center transition">
+              <svg class="icon w-4 h-4" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="w-8 h-8 rounded-full bg-white/10 hover:bg-boutique-champagne hover:text-boutique-rose-deep text-white flex items-center justify-center transition">
+              <svg class="icon w-4 h-4" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-boutique-champagne">Πλοηγηση</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#home" class="hover:text-white transition">Αρχική Σελίδα</a></li>
+            <li><a href="#about" class="hover:text-white transition">Το Εργαστήριο &amp; Η Παράδοση</a></li>
+            <li><a href="#products" class="hover:text-white transition">Κατάλογος Προϊόντων</a></li>
+            <li><a href="#b2b-channels" class="hover:text-white transition">Συνεργασίες Χονδρικής B2B</a></li>
+            <li><a href="#inquiry" class="hover:text-white transition">Αίτημα Δειγμάτων Γευσιγνωσίας</a></li>
+            <li><a href="#contact" class="hover:text-white transition">Επικοινωνία &amp; Τοποθεσία</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact & Workshop Location -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-boutique-champagne">Στοιχεια Εργαστηριου</h4>
+          <ul class="space-y-3 text-xs">
+            <li class="flex items-start gap-2.5">
+              <svg class="icon w-4 h-4 text-boutique-champagne shrink-0 mt-0.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>5ο χλμ. Λάρισας - Φαλάνης, Λάρισα, Τ.Κ. 41500</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="icon w-4 h-4 text-boutique-champagne shrink-0" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:6984350985" class="hover:text-white font-bold">6984 350985</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="icon w-4 h-4 text-boutique-champagne shrink-0" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:euanthiagetsiou2000@gmail.com" class="hover:text-white">euanthiagetsiou2000@gmail.com</a>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="icon w-4 h-4 text-boutique-champagne shrink-0 mt-0.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Δευτέρα – Σάββατο: 08:00 – 20:00</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Wholesale Newsletter / Info -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-boutique-champagne">Ενημερωση B2B</h4>
+          <p class="text-xs text-rose-200/70 leading-relaxed font-normal">
+            Εγγραφείτε για να λαμβάνετε εποχιακές προσφορές χονδρικής και νέες specialty γεύσεις για την επιχείρησή σας.
+          </p>
+          <form onsubmit="event.preventDefault(); alert('Ευχαριστούμε για την εγγραφή σας!'); event.target.reset();" class="space-y-2">
+            <input type="email" required placeholder="Το επαγγελματικό email σας..." class="w-full text-xs px-3.5 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-rose-200/50 focus:outline-none focus:border-boutique-champagne">
+            <button type="submit" class="w-full py-2.5 rounded-lg bg-boutique-champagne hover:bg-amber-300 text-boutique-rose-deep font-bold text-xs uppercase tracking-wider transition">
+              Εγγραφη
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-rose-200/60">
+        <div>
+          © 2026 Ευανθία Γκέτσιου. Όλα τα δικαιώματα διατηρούνται.
+        </div>
+        <div class="flex items-center gap-4">
+          <span>Επίσημο Εργαστήριο Λουκουμιών • Λάρισα (Αποκλειστικά B2B Χονδρική)</span>
+          <a href="#home" class="text-boutique-champagne hover:underline flex items-center gap-1">
+            <span>Κορυφή</span>
+            <svg class="icon w-3.5 h-3.5" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       10. PRODUCT DETAIL MODAL
+       ========================================================================= -->
+  <div id="productModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl border-4 border-white animate-in fade-in duration-200">
+      <div class="h-56 relative overflow-hidden bg-boutique-cream">
+        <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
+        <button onclick="closeProductModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition">
+          ✕
+        </button>
+      </div>
+
+      <div class="p-6 sm:p-8 space-y-4">
+        <div>
+          <span class="text-[10px] font-bold text-boutique-champagne uppercase tracking-wider">Προδιαγραφες B2B</span>
+          <h3 id="modalTitle" class="font-didot-title text-2xl font-bold text-boutique-rose-deep mt-0.5"></h3>
+          <p id="modalDesc" class="text-xs text-boutique-muted mt-1 leading-relaxed"></p>
+        </div>
+
+        <div class="space-y-2.5 pt-3 border-t border-boutique-border/60 text-xs text-boutique-espresso">
+          <div class="flex items-start justify-between">
+            <span class="text-boutique-muted font-semibold">Συστατικά / Ύλες:</span>
+            <span id="modalIngredients" class="font-bold text-right max-w-xs"></span>
+          </div>
+          <div class="flex items-start justify-between">
+            <span class="text-boutique-muted font-semibold">Συσκευασίες Χονδρικής:</span>
+            <span id="modalPackaging" class="font-bold text-right max-w-xs"></span>
+          </div>
+          <div class="flex items-start justify-between">
+            <span class="text-boutique-muted font-semibold">Διάρκεια Ζωής:</span>
+            <span id="modalShelfLife" class="font-bold text-right"></span>
+          </div>
+        </div>
+
+        <div class="pt-4 flex items-center justify-between gap-3">
+          <button onclick="closeProductModal()" class="btn btn-sm btn-ghost text-xs">Κλείσιμο</button>
+          <a href="#inquiry" onclick="closeProductModal()" class="btn btn-sm bg-boutique-rose-dark hover:bg-boutique-rose-deep text-white border-none rounded-full px-5 text-xs font-bold uppercase">
+            Αίτημα Δείγματος Γεύσης
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       11. JAVASCRIPT LOGIC
+       ========================================================================= -->
+  <script>
+    // Mobile Drawer Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Category Filter Logic
+    function filterCategory(cat, btn) {
+      document.querySelectorAll('.cat-filter-btn').forEach(b => {
+        b.classList.remove('bg-boutique-rose-dark', 'text-white', 'shadow-sm', 'border-boutique-rose-dark');
+        b.classList.add('bg-white', 'text-boutique-rose-deep', 'border-boutique-border');
+      });
+      btn.classList.remove('bg-white', 'text-boutique-rose-deep', 'border-boutique-border');
+      btn.classList.add('bg-boutique-rose-dark', 'text-white', 'shadow-sm', 'border-boutique-rose-dark');
+
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(c => {
+        if (cat === 'all' || c.getAttribute('data-cat') === cat) {
+          c.style.display = 'flex';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal Details
+    function openProductModal(title, desc, ingredients, packaging, shelfLife, imgSrc) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('modalIngredients').innerText = ingredients;
+      document.getElementById('modalPackaging').innerText = packaging;
+      document.getElementById('modalShelfLife').innerText = shelfLife;
+      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('modalImg').alt = title;
+      document.getElementById('productModal').classList.remove('hidden');
+    }
+
+    function closeProductModal() {
+      document.getElementById('productModal').classList.add('hidden');
+    }
+
+    // Form submission simulation
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const successBox = document.getElementById('inquirySuccess');
+      successBox.classList.remove('hidden');
+      e.target.reset();
+      setTimeout(() => {
+        successBox.classList.add('hidden');
+      }, 7000);
+    }
+  </script>
+</body>
+</html>
